@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.0">
+<meta name="author" content="Makzan">
+<title>DSRT Course Material 2015</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic|Noto+Serif:400,400italic,700,700italic|Droid+Sans+Mono:400">
+<link rel="stylesheet" href="./asciidoctor.css">
+</head>
+<body class="book toc2 toc-left">
+<div id="header">
+<h1>DSRT Course Material 2015</h1>
+<div class="details">
+<span id="author" class="author">Makzan</span><br>
+<span id="email" class="email"><a href="mailto:mak@makzan.net">mak@makzan.net</a></span><br>
+<span id="revnumber">version 1.0,</span>
+<span id="revdate">October 4, 2015</span>
+<br><span id="revremark">First Draft</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#_how_this_course_is_constructed">1.1. How this course is constructed</a></li>
+<li><a href="#_about_this_course">1.2. About this course</a></li>
+<li><a href="#_what_type_of_app_you_need_to_build">1.3. What type of app you need to build?</a></li>
+<li><a href="#_why_web_technology">1.4. Why web technology?</a></li>
+<li><a href="#_expectation_app_vs_web">1.5. Expectation: App vs web</a></li>
+</ul>
+</li>
+<li><a href="#_getting_sensor_value">2. Getting sensor value</a>
+<ul class="sectlevel2">
+<li><a href="#_getting_device_information_in_web">2.1. Getting device information in web</a></li>
+</ul>
+</li>
+<li><a href="#_mobile_navigation">3. Mobile Navigation</a>
+<ul class="sectlevel2">
+<li><a href="#_mobile_navigation_2">3.1. Mobile navigation</a></li>
+<li><a href="#_case_study_navigation_facebook">3.2. Case study navigation—Facebook</a></li>
+</ul>
+</li>
+<li><a href="#_mobile_navigation_3">4. Mobile Navigation</a>
+<ul class="sectlevel2">
+<li><a href="#_accessibility_making_the_web_inclusive">4.1. Accessibility—Making the web inclusive</a></li>
+<li><a href="#_aria_roles">4.2. ARIA roles</a></li>
+<li><a href="#_color_blind">4.3. Color blind</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is the course material I created for the cross-platform development class. in this course, we will explore different approaches and choices to build app for different platforms, mainly iOS, Android and web.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction">1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Getting ready.</p>
+</div>
+<div class="sect2">
+<h3 id="_how_this_course_is_constructed">1.1. How this course is constructed</h3>
+<div class="paragraph">
+<p>There are different individual topics that we are going to cover in this course. You can find the course entry point at <a href="http://page.sh/dsrt2015" class="bare">http://page.sh/dsrt2015</a></p>
+</div>
+<div class="paragraph">
+<p>The entry point provides the outline links to each individual topic. It also comes with a log to show the changes I have made from time to time.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_about_this_course">1.2. About this course</h3>
+<div class="paragraph">
+<p>In my part of the course, we focus on different web technologies to create mobile web app.</p>
+</div>
+<div class="paragraph">
+<p>You&#8217;ll need to know basic HTML, CSS, and Javascript.</p>
+</div>
+<div class="paragraph">
+<p>We will also explore how we can make use of native platform resources to create hybrid app.</p>
+</div>
+<div class="paragraph">
+<p>You can refer to my past course materials on makzan.net for some basic skills.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_what_type_of_app_you_need_to_build">1.3. What type of app you need to build?</h3>
+<div class="paragraph">
+<p>Different types of apps requires different solutions which involves of different technologies.</p>
+</div>
+<div class="paragraph">
+<p>You need to learn the advantages of each technology and know where to use the right one for different situations.</p>
+</div>
+<div class="paragraph">
+<p>Roughly, we have the following common types of applications.</p>
+</div>
+<div class="paragraph">
+<p>We explore several common types and see what technologies we shall use to make the app.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Informative app</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>One common type is informative app. That the app organize and display information in a easy to read hierarchy.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Utilities</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Small utilities</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Productivity tools</p>
+</li>
+<li>
+<p>Photography</p>
+</li>
+<li>
+<p>Games</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It depends. For serious game, obviously native gains the performance advantages. But for casual games, we can use canvas, webGL from HTML5 to build a smooth game.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>e-book</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The web is good for displaying interactive content.</p>
+</div>
+<div class="paragraph">
+<p>But be aware that if we need the</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Music</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Web audio supports isn&#8217;t really good. So native is really the technology we want to build music playback application.</p>
+</div>
+<div class="paragraph">
+<p>For example, we sure need the iOS native API to implement the background playback function to allow listening to the music when the phone is locked.</p>
+</div>
+<div class="paragraph">
+<p>But we actually can still make use of the web technologies somewhere. For example, we can build the interface in web view. There are connections between web and the native API.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Entertainment</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_why_web_technology">1.4. Why web technology?</h3>
+<div class="paragraph">
+<p>Every device have a browser
+* not all. Apple TV OS doesn&#8217;t have WebKit component.</p>
+</div>
+<div class="paragraph">
+<p>We are familiar with web technology:
+HTML, CSS, JavaScript</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_expectation_app_vs_web">1.5. Expectation: App vs web</h3>
+<div class="ulist">
+<div class="title">App</div>
+<ul>
+<li>
+<p>Get things done</p>
+</li>
+<li>
+<p>Usability</p>
+</li>
+<li>
+<p>Platform specific</p>
+</li>
+<li>
+<p>Device hardware</p>
+</li>
+<li>
+<p>Default offline</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Web</div>
+<ul>
+<li>
+<p>Informative</p>
+</li>
+<li>
+<p>Hierarchy</p>
+</li>
+<li>
+<p>Readability</p>
+</li>
+<li>
+<p>Deep linking</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You won’t think that a website works in iPhone but not android. But you will find apps working on 1 platform only. Also, you think you can use any device to see the website and get what information you want</p>
+</div>
+<div class="sect3">
+<h4 id="_web_for_app">1.5.1. Web for app?</h4>
+<div class="paragraph">
+<p>In my opinions, we will never archive app experience with web technology. That&#8217;s same that we will never archive web’s culture with app technology.
+They are different things. They are designed for different purposes.
+But, we can combine both by taking their advantages and avoiding their weaknesses.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_the_process_of_building_native_app_vs_web_app">1.5.2. The process of building native app vs web app</h4>
+<div class="paragraph">
+<p>the graph</p>
+</div>
+<div class="paragraph">
+<p>Using the pure web technology to build app is fast.</p>
+</div>
+<div class="paragraph">
+<p>Using native technology to build app seemed to eb slow, but in the long run, it has more stable curve.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p>Actually there is no such thing about app must win or web must win. They can both win in their places and be campanion to each other.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_getting_sensor_value">2. Getting sensor value</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this chapter, we explore different JavaScript API to get device sensors.</p>
+</div>
+<div class="sect2">
+<h3 id="_getting_device_information_in_web">2.1. Getting device information in web</h3>
+<div class="paragraph">
+<p>Getting accelerometer</p>
+</div>
+<div class="paragraph">
+<p>Getting orientation</p>
+</div>
+<div class="paragraph">
+<p>Getting gyroscope</p>
+</div>
+<div class="paragraph">
+<p>Accepting photo upload</p>
+</div>
+<div class="sect3">
+<h4 id="_getting_orientation">2.1.1. Getting orientation</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_getting_gyroscope_accelerometer">2.1.2. Getting Gyroscope &amp; Accelerometer</h4>
+<div class="paragraph">
+<p>Getting raw data</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">window.addEventListener('devicemotion', function (e) {
+  this.acceleration = e.acceleration;
+};</code></pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_the_code_example">The code example</h5>
+<div class="paragraph">
+<p>We use a list to display the value history.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;ul id="x" class="history"&gt;
+  &lt;li&gt;No Data Yet&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We use an array to store the history of the value. And set a limit count to the array.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">app.xValues = [];
+window.addEventListener('devicemotion', function (e) {
+  app.xValues.push(e.acceleration.x);
+  var listLimit = 15;
+  if (app.xValues.length &gt; listLimit) {
+    app.xValues.splice(0, 1); // remove the old records when list too long.
+  }
+
+  app.view.update();
+});</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">app.view = {}
+app.view.update = function(){
+  this.renderHistory($('#x'), app.xValues);
+}
+
+app.view.renderHistory = function(element, data) {
+  $(element).empty();
+  for (var i = app.xValues.length - 1; i &gt;= 0; i--) {
+    $(element).append("&lt;li&gt;" + Math.floor(data[i]*1000) + "&lt;/li&gt;");
+  };
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that this code only shows the handling of X value. There are Y and Z value in accelerometer sensor that share very similar logic.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_visualize_the_accelerometer_value_history_a_pie_chart">2.1.3. Visualize the accelerometer value history a pie chart</h4>
+<div class="paragraph">
+<p>We will put a canvas in each axis.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;div class='row'&gt;
+  &lt;h2&gt;X&lt;/h2&gt;
+  &lt;canvas id='x-canvas' width='80' height='40'&gt;&lt;/canvas&gt;
+  &lt;ul id='x' class='history'&gt;
+    &lt;li&gt;No Data Yet&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We will use a graph to show the historical values of the sensor.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">// Graph
+(function(){
+  var app = this.app || (this.app={});
+
+  // A bar chart for - Max Value to + Max Value.
+  app.Graph = (function(){
+    function Graph(canvasId, maxValue){
+      this.canvas = document.getElementById(canvasId);
+      if (this.canvas) {
+        this.context = this.canvas.getContext('2d');
+      }
+
+      // set the Y unit scale.
+      this.unit = this.canvas.height / 2 / maxValue; // divide by 2 because half for + and half for -.
+    }
+    Graph.prototype.drawBar = function(x, value) {
+      var c = this.context;
+      c.beginPath();
+      c.moveTo(x, this.canvas.height/2); // middle
+      c.lineTo(x, this.canvas.height/2 - value * this.unit);
+      c.lineWidth = 3;
+      c.strokeStyle = "#222";
+      c.stroke();
+      c.closePath();
+    };
+    Graph.prototype.render = function(dataArray) {
+      this.canvas.width = this.canvas.width;
+      for (var i=0, len=dataArray.length; i&lt;len; i++) {
+        this.drawBar(i*5, dataArray[i]);
+      }
+    }
+    return Graph;
+  })();
+}).call(this);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>At last, we use the Graph to render the historical data.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">var graphX = new app.Graph('x-canvas', 2.5);
+graphX.render(app.xValues);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_inspecting_the_gyroscope_sensor">2.1.4. Inspecting the gyroscope sensor</h4>
+<div class="paragraph">
+<p>You can test the app here: <a href="http://mztests.herokuapp.com/rotation/" class="bare">http://mztests.herokuapp.com/rotation/</a></p>
+</div>
+<div class="paragraph">
+<p>The different is just change to listen to <code>deviceorientation</code> and use <code>e.alpha</code>, <code>e.beta</code>, <code>e.gamma</code> for the rotation axises.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">window.addEventListener('deviceorientation', function (e) {
+  app.xValues.push(e.alpha);
+  app.yValues.push(e.beta);
+  app.zValues.push(e.gamma);
+  // ... code that is very similar to the accelerometer section.
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mobile_navigation">3. Mobile Navigation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_mobile_navigation_2">3.1. Mobile navigation</h3>
+<div class="sect3">
+<h4 id="_navigation_difference_between_platform">3.1.1. Navigation difference between platform</h4>
+<div class="paragraph">
+<p>The difference is huge
+Windows, Android, iOS
+It&#8217;s not about the style (skepticism or "flat", or depth)
+It&#8217;s about the user habits.
+It&#8217;s about the strategy (tabs on bottom, tabs at top, infinite canvas)
+It&#8217;s about the hardware buttons that affects the software design</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_hamburger_menu">3.1.2. Hamburger menu?</h4>
+<div class="paragraph">
+<p>Conclusion: avoid it.
+At least don&#8217;t just put the hamburger menu there.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_case_study_navigation_facebook">3.2. Case study navigation—Facebook</h3>
+<div class="paragraph">
+<p>First 9 grid
+Then list view
+Then hamburger menu
+Then double hamburger menu
+Then removed main hamburger menu and back to tab</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mobile_navigation_3">4. Mobile Navigation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_accessibility_making_the_web_inclusive">4.1. Accessibility—Making the web inclusive</h3>
+<div class="paragraph">
+<p>One difference between web and app is that web pages should be designed to be inclusive. It doesn&#8217;t and never lock into perticular platform. It&#8217;s designed so that every one can get the information. This is why we need to handle accessibility in our web pages.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_aria_roles">4.2. ARIA roles</h3>
+<div class="sect3">
+<h4 id="_common_aria_roles">4.2.1. Common ARIA Roles</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>For structure</p>
+</li>
+<li>
+<p>For buttons</p>
+</li>
+<li>
+<p>For UI Components</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ui_components">4.2.2. UI Components</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Dialog</p>
+</li>
+<li>
+<p>Tab and Tabs Content</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_color_blind">4.3. Color blind</h3>
+
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Version 1.0<br>
+Last updated 2015-10-07 10:17:51 UTC
+</div>
+</div>
+</body>
+</html>
