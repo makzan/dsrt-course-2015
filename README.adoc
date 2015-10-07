@@ -1,0 +1,20 @@
+= DSRT Course Material 2015
+
+A short book about making CSS 3D effects.
+
+This is the course material I created for the cross-platform development class. in this course, we will explore different approaches and choices to build app for different platforms, mainly iOS, Android and web.
+
+== Installation
+
+Install the gems via `bundle install`.
+
+== Building
+
+run `bundle exec rake` to build book.
+
+run `bundle exec rake book:build_chapter_html` to build each chapter into HTML file.
+
+== Lincense
+
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Unported License.
+
