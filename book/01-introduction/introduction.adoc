@@ -1,0 +1,13 @@
+= Introduction
+:toc: left
+:linkcss:
+
+Getting ready.
+
+include::sections/prepare.adoc[]
+
+include::sections/app-type.adoc[]
+
+include::sections/why-web.adoc[]
+
+include::sections/app-vs-web.adoc[]

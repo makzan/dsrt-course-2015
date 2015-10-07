@@ -1,0 +1,15 @@
+== How this course is constructed
+
+There are different individual topics that we are going to cover in this course. You can find the course entry point at http://page.sh/dsrt2015
+
+The entry point provides the outline links to each individual topic. It also comes with a log to show the changes I have made from time to time.
+
+== About this course
+
+In my part of the course, we focus on different web technologies to create mobile web app.
+
+You'll need to know basic HTML, CSS, and Javascript.
+
+We will also explore how we can make use of native platform resources to create hybrid app.
+
+You can refer to my past course materials on makzan.net for some basic skills.

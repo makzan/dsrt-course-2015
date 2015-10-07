@@ -1,0 +1,22 @@
+= Mobile Navigation
+:toc: left
+:linkcss:
+
+== Accessibility—Making the web inclusive
+
+One difference between web and app is that web pages should be designed to be inclusive. It doesn't and never lock into perticular platform. It's designed so that every one can get the information. This is why we need to handle accessibility in our web pages.
+
+== ARIA roles
+
+=== Common ARIA Roles
+
+- For structure
+- For buttons
+- For UI Components
+
+=== UI Components
+
+- Dialog
+- Tab and Tabs Content
+
+== Color blind

@@ -3,13 +3,13 @@ Makzan <mak@makzan.net>
 v1.0, October 4, 2015: First Draft
 :doctype: book
 :docinfo:
-:toc: left
-:toclevels: 2
-:sectnums:
 :linkcss:
 
-An sample book to show case AsciiDoctor folder structure.
+== DSRT Course Material 2015
 
-include::book/chapter-1/chapter-1.adoc[leveloffset=+1]
+By http://makzan.net[Makzan].
 
-include::book/chapter-2/chapter-2.adoc[leveloffset=+1]
+This is the course material I created for the cross-platform development class. in this course, we will explore different approaches and choices to build app for different platforms, mainly iOS, Android and web.
+
+1. link:01-introduction.html[Introduction]
+2. link:02-getting-sensor-value.html[Getting sensor value]

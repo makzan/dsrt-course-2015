@@ -1,0 +1,24 @@
+= Mobile Navigation
+:toc: left
+:linkcss:
+
+== Mobile navigation
+
+=== Navigation difference between platform
+The difference is huge
+Windows, Android, iOS
+It's not about the style (skepticism or "flat", or depth)
+It's about the user habits.
+It's about the strategy (tabs on bottom, tabs at top, infinite canvas)
+It's about the hardware buttons that affects the software design
+
+=== Hamburger menu?
+Conclusion: avoid it.
+At least don't just put the hamburger menu there.
+
+== Case study navigation—Facebook
+First 9 grid
+Then list view
+Then hamburger menu
+Then double hamburger menu
+Then removed main hamburger menu and back to tab

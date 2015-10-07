@@ -8,8 +8,12 @@ v1.0, October 4, 2015: First Draft
 :sectnums:
 :linkcss:
 
-An sample book to show case AsciiDoctor folder structure.
+This is the course material I created for the cross-platform development class. in this course, we will explore different approaches and choices to build app for different platforms, mainly iOS, Android and web.
 
-include::book/chapter-1/chapter-1.adoc[leveloffset=+1]
+include::book/01-introduction/introduction.adoc[leveloffset=+1]
 
-include::book/chapter-2/chapter-2.adoc[leveloffset=+1]
+include::book/02-getting-sensor-value/getting-sensor-value.adoc[leveloffset=+1]
+
+include::book/0x-mobile-navigation/mobile-navigation.adoc[leveloffset=+1]
+
+include::book/0x-web-accessibility/web-accessibility.adoc[leveloffset=+1]

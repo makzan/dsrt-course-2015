@@ -1,0 +1,7 @@
+== Why web technology?
+
+Every device have a browser
+* not all. Apple TV OS doesn't have WebKit component.
+
+We are familiar with web technology:
+HTML, CSS, JavaScript
