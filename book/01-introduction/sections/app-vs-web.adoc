@@ -23,14 +23,12 @@ In my opinions, we will never archive app experience with web technology. That's
 They are different things. They are designed for different purposes.
 But, we can combine both by taking their advantages and avoiding their weaknesses.
 
+Actually there is no such thing about app must win or web must win. They can both win in their places and be companion to each other.
+
 === The process of building native app vs web app
 
 TODO: the graph
 
 Using the pure web technology to build app is fast.
 
-Using native technology to build app seemed to eb slow, but in the long run, it has more stable curve.
-
-***
-
-Actually there is no such thing about app must win or web must win. They can both win in their places and be campanion to each other.
+Using native technology to build app seemed to be slow, but in the long run, it has more stable curve.

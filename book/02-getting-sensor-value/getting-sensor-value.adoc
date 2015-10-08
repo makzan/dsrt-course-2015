@@ -29,7 +29,7 @@ window.addEventListener('devicemotion', function (e) {
 
 ==== The code example
 
-We use a list to display the value history.
+In this example, we use a list to display the value history.
 
 [source,html]
 ----
@@ -73,7 +73,7 @@ Note that this code only shows the handling of X value. There are Y and Z value 
 
 === Visualize the accelerometer value history a pie chart
 
-We will put a canvas in each axis.
+We will use canvas to visualize the value of each axis. You can test the app here: http://mztests.herokuapp.com/motion/
 
 [source,html]
 ----
@@ -138,7 +138,7 @@ graphX.render(app.xValues);
 
 You can test the app here: http://mztests.herokuapp.com/rotation/
 
-The different is just change to listen to `deviceorientation` and use `e.alpha`, `e.beta`, `e.gamma` for the rotation axises.
+Comparing to the accelerometer example, the difference is to change the event to `deviceorientation` and use `e.alpha`, `e.beta`, `e.gamma` for the value of rotation axises.
 
 [source,javascript]
 ----
