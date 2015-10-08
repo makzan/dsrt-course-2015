@@ -1,0 +1,8 @@
+= React
+:toc: left
+:linkcss:
+
+== Introducing ReactJS
+
+
+include::sections/react-pre-render.adoc[]

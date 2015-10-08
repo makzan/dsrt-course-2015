@@ -2,7 +2,7 @@
 :toc: left
 :linkcss:
 
-== Mobile navigation
+The strategy to make mobile navigation works.
 
 === Navigation difference between platform
 The difference is huge

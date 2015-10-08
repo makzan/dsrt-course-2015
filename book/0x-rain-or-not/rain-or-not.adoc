@@ -2,10 +2,13 @@
 :toc: left
 :linkcss:
 
+An example of using jQuery, jQuery mobile and GPS data.
 
 == Example—Rain or Not?
 
-$.getJSON
+
+In jQuery, we use `$.getJSON` to fetch JSON data from web service’s API.
+
 The API:
 
 http://api.openweathermap.org/data/2.5/weather?q=Macau,MO
