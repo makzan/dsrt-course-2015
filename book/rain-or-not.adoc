@@ -96,6 +96,7 @@ The `callback=?`` is to tell jQuery getJSON method to use the JSON-P approach in
 === Crafting our Rain-or-Not app
 This is our root page.
 
+[source,html]
 ----
 <div data-role='page' id='root'>
   <div data-role='header'>
@@ -109,6 +110,7 @@ This is our root page.
 
 The very basic yet working logic.
 
+[source,javascript]
 ----
 (function($){
   $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=Macao,MO&callback=?', function(data){
@@ -127,6 +129,7 @@ NOTE: the rainy code information is from the API documentation.
 
 And the style.
 
+[source,css]
 ----
 .sunny {
   background: #ade1f9 url(../images/sunny.png) no-repeat center center;
@@ -152,6 +155,7 @@ This refactoring put DOM manipulation in view. And leave the app controller away
 
 The `model.js` file.
 
+[source,javascript]
 ----
 (function($){
   var app = this.app = this.app || {};
@@ -169,6 +173,7 @@ The `model.js` file.
 
 The view.js file.
 
+[source,javascript]
 ----
 (function($){
   var app = this.app = this.app || {};
@@ -188,6 +193,7 @@ The view.js file.
 
 The app.js file.
 
+[source,javascript]
 ----
 (function(){
   var app = this.app = this.app || {};
@@ -211,6 +217,7 @@ This refactoring moves the data checking back to the model module. What app cont
 
 Thin controller approach.
 
+[source,javascript]
 ----
 (function(){
   var app = this.app = this.app || {};
@@ -224,6 +231,7 @@ Thin controller approach.
 
 And the model now handles the data.
 
+[source,javascript]
 ----
 (function($){
   var app = this.app = this.app || {};
@@ -248,6 +256,7 @@ And the model now handles the data.
 
 https://developer.mozilla.org/en-US/docs/WebAPI/Using_geolocation
 
+[source,javascript]
 ----
 navigator.geolocation.getCurrentPosition(function(location) {
   console.log(location.coords.latitude, location.coords.longitude);
@@ -258,6 +267,7 @@ Browser will ask for user’s permisson before fetching the location. The follow
 
 === Fetch weather from location
 
+[source,javascript]
 ----
 navigator.geolocation.getCurrentPosition(function(location) {
   console.log(location.coords.latitude, location.coords.longitude);
@@ -274,6 +284,7 @@ Weather api with geolocation
 
 And we can add an error handling callback as the second parameter for the getCurrentPosition method call.
 
+[source,javascript]
 ----
 navigator.geolocation.getCurrentPosition(function(location) {
   console.log(location.coords.latitude, location.coords.longitude);

@@ -1,9 +1,10 @@
 == Case study—Basecamp for mobile
 
-Pure server side render
-Then client capture the request and create the iOS view hierarchy.
-Navigation controller, push and pop Modal view controller
-Then making some elements native, such as the menu.
-Then, fine tuning the web for touch CSS
-Then, moving more part that requires high performance info native.
+1. Pure server side render
+2. Then client capture the request and create the iOS view hierarchy.
+3. Navigation controller, push and pop Modal view controller
+4. Then making some elements native, such as the menu.
+5. Then, fine tuning the web for touch CSS
+6. Then, moving more part that requires high performance info native.
+
 It's a process. A transition. Won't archive it at one step.
