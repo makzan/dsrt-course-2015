@@ -16,7 +16,14 @@ One difference between web and app is that web pages should be designed to be in
 
 === UI Components
 
+- Button
 - Dialog
 - Tab and Tabs Content
 
+TODO: Button with title for voice speaking out.
+
+TODO: Example for tab and tab content with asia-role
+
 == Color blind
+
+TODO: link to color blind checking tool.

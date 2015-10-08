@@ -1,0 +1,6 @@
+
+== Case study—Facebook app
+First 9 grid native app
+Then list view
+Then pure web view
+Then rewrite into native app.

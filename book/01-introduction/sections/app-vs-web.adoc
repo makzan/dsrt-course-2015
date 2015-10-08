@@ -13,7 +13,7 @@
 - Readability
 - Deep linking
 
-You won’t think that a website works in iPhone but not android. But you will find apps working on 1 platform only. Also, you think you can use any device to see the website and get what information you want
+You won’t think that a website works in iPhone but not Android. But you will find apps working on 1 platform only, at most 2 platforms. On the other hands, you think you can use any device to see the website and get what information you want
 
 
 === Web for app?

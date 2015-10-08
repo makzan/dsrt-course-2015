@@ -16,9 +16,28 @@ One common type is informative app. That the app organize and display informatio
 
 Small utilities
 
+Such as:
+
+Rulers
+Currency converter
+Weather utility 
+
+*compaee to the weather full feature app
+
+Tiny tools that does one thing great 
+
+
 * Productivity tools
 
 * Photography
+
+Usually it needs to be. Active to access the camera stream. 
+
+In web, we often only have access to a taken photo instead of getting the real time camera data.
+
+But actually it depends on what he photography app does.
+
+For example, the Funny Face project only needs a taken photo and add fun faces on it.ma real world example would be the minions promotion website. 
 
 * Games
 

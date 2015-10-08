@@ -4,6 +4,9 @@
 
 Getting ready.
 
+Before we jump right into code, let's warm up with some preparation and introduction. 
+
+
 include::sections/prepare.adoc[]
 
 include::sections/app-type.adoc[]

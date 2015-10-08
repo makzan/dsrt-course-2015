@@ -1,19 +1,23 @@
 = DSRT 2015
 Makzan <mak@makzan.net>
-v0.1, 2015-10-08
+v0.2, 2015-10-08
 
 
 
 
 == tapping area
 
-Comfort zone for tapping
+When we design the user interface for mobile apps, we have to consider how the user will really use the app.
 
-Comparability between different phone sizes.
+Is the app easy to use when user uses it in one hand mode? How about left hand and right hand? How about the difference between a small phone (iPhone 5s) and large phone (iPhone 6 Plus)?
+
+There is a comfort zone for tapping when holding one hand. It's located at the center and near the middle to bottom area.
+
+TODO: Comparability between different phone sizes.
 
 Recommend book: TapWorthy
 
-***
+== Books to read and learn
 
 Js recommend book:
 JavaScript the good part
@@ -43,21 +47,7 @@ Native part to gain native code performance and hardware access
 Web technology for user interface creation
 NOTE: app gesture and touch handling is better
 
-== Case study—Basecamp for mobile
 
-Pure server side render
-Then client capture the request and create the iOS view hierarchy.
-Navigation controller, push and pop Modal view controller
-Then making some elements native, such as the menu.
-Then, fine tuning the web for touch CSS
-Then, moving more part that requires high performance info native.
-It's a process. A transition. Won't archive it at one step.
-
-== Case study—Facebook app
-First 9 grid native app
-Then list view
-Then pure web view
-Then rewrite into native app.
 
 == Android JavaScript performance
 Very poor.
@@ -110,14 +100,6 @@ The same code can actually run on both mobile device and desktop.
 
 I actually wrap many of web services I use every day into desktop application by using an app called Fluid. I provide the URL to the Fluid app. Then It basically use a web view to load the URL in a separated app container. The result is I can have them in my dock for easy access.
 
-=== Electron
-
-There are more and more desktop apps now actually builds on top of the web technology. It uses a local NodeJS runtime to make use of the system resources where the web API won't provide because of the security reason.
-
-Electron combines both advantages of web technology and the Node.js package ecosystem.
-
-The large amount of Node.js packages and the system level API allows many possibilities. On the front end, the mature of web technology makes app designer easier to craft the interface and the view controllers.
-
 
 
 === Mobile first approach
@@ -126,15 +108,11 @@ we design on the mobile device first.
 
 
 
-
-
 == Using map
 
 - Google map
 - MapBox
 - OpenStreetMap
-
-== Example—Rain or Not?
 
 
 
@@ -165,7 +143,6 @@ The first one still needs Internet access to fetch the app files, which is the H
 
 == Offline example
 
-In the colloid all, try to access them offline.
 
 1. Go to the PieGuy web page in mobile Safari.
 2. Add the PieGuy to home screen.
@@ -190,13 +167,6 @@ the easiest way to make informative mobile web.
 == Building native app with ReactNative
 
 ReactNative allows us to use the React philosophy to build the native view components.
-
-== Server side pre-rendering React component
-
-Why we need to pre render the React component?
-
-That's for fallback for browsers that don't have JavaScript support.
-
 
 
 

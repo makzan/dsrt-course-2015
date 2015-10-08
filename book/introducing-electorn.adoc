@@ -1,0 +1,7 @@
+=== Electron
+
+There are more and more desktop apps now actually builds on top of the web technology. It uses a local NodeJS runtime to make use of the system resources where the web API won't provide because of the security reason.
+
+Electron combines both advantages of web technology and the Node.js package ecosystem.
+
+The large amount of Node.js packages and the system level API allows many possibilities. On the front end, the mature of web technology makes app designer easier to craft the interface and the view controllers.
