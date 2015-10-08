@@ -16,4 +16,10 @@ include::book/02-getting-sensor-value/getting-sensor-value.adoc[leveloffset=+1]
 
 include::book/0x-mobile-navigation/mobile-navigation.adoc[leveloffset=+1]
 
+include::book/0x-desktop-web-app/desktop-web-app.adoc[leveloffset=+1]
+
+include::book/0x-rain-or-not/rain-or-not.adoc[leveloffset=+1]
+
+include::book/0x-react/react.adoc[leveloffset=+1]
+
 include::book/0x-web-accessibility/web-accessibility.adoc[leveloffset=+1]
