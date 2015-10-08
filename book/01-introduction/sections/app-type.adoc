@@ -1,8 +1,6 @@
 == What type of app you need to build?
 
-Different types of apps requires different solutions which involves of different technologies.
-
-You need to learn the advantages of each technology and know where to use the right one for different situations.
+Different types of apps requires different solutions which involves of different technologies. You need to learn the advantages of each technology and know where to use the right one for different situations.
 
 Roughly, we have the following common types of applications.
 
@@ -18,26 +16,26 @@ Small utilities
 
 Such as:
 
-Rulers
-Currency converter
-Weather utility 
+- Rulers
+- Currency converter
+- Weather utility
 
-*compaee to the weather full feature app
+* compare to the weather full feature app
 
-Tiny tools that does one thing great 
+Tiny tools that does one thing great
 
 
 * Productivity tools
 
 * Photography
 
-Usually it needs to be. Active to access the camera stream. 
+Usually it needs to be. Active to access the camera stream.
 
 In web, we often only have access to a taken photo instead of getting the real time camera data.
 
 But actually it depends on what he photography app does.
 
-For example, the Funny Face project only needs a taken photo and add fun faces on it.ma real world example would be the minions promotion website. 
+For example, the Funny Face project only needs a taken photo and add fun faces on it. In real world example, it would be the Minions promotion website.
 
 * Games
 
@@ -47,7 +45,7 @@ It depends. For serious game, obviously native gains the performance advantages.
 
 The web is good for displaying interactive content.
 
-But be aware that if we need the
+But be aware that if we need the touch and gesture, we may need to carefully craft the touch/gesture experience. It's not as easy as in native environment.
 
 * Music
 
