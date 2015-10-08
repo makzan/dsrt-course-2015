@@ -1,4 +1,4 @@
-=== Electron
+== Electron
 
 There are more and more desktop apps now actually builds on top of the web technology. It uses a local NodeJS runtime to make use of the system resources where the web API won't provide because of the security reason.
 
