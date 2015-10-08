@@ -7,7 +7,7 @@ The strategy to make mobile navigation works.
 == Navigation difference between platform
 The difference is huge
 Windows, Android, iOS
-It's not about the style (skepticism or "flat", or depth)
+It's not about the style (Skeuomorphism or "flat", or depth)
 It's about the user habits.
 It's about the strategy (tabs on bottom, tabs at top, infinite canvas)
 It's about the hardware buttons that affects the software design
