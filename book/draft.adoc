@@ -74,17 +74,6 @@ we design on the mobile device first.
 
 
 
-== Storage
-
-Local storage and Remote storage
-
-Possible remote storage option:
-
-- Remote database with MongoDB service
-- Remote database with Parse.com
-- Remote database with Firebase
-
-
 == Push Notification
 
 
@@ -113,7 +102,7 @@ ReactNative allows us to use the React philosophy to build the native view compo
 - Distributing to the web
 - Minify your code
 - Adding the web app to iOS home screen
-- Phonegap Build
+- PhoneGap Build
 - Publish to App Store
 - Publish to Google Play
 - Distribution is just the beginning
