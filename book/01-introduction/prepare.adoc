@@ -12,4 +12,10 @@ You'll need to know basic HTML, CSS, and Javascript.
 
 We will also explore how we can make use of native platform resources to create hybrid app.
 
-You can refer to my past course materials on makzan.net for some basic skills.
+You can refer to my past course materials on http://makzan.net[makzan.net] for some basic skills.
+
+Specifically, you may find my mobile related course material in the following:
+
+- http://www.makzan.net/introducing-web-design/
+- http://www.makzan.net/mobile-web-design/
+- http://www.makzan.net/mobile-web-app-dev-with-phonegap/

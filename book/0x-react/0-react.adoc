@@ -1,8 +1,7 @@
-= React
+= Introducing React
 :toc: left
 :linkcss:
 
-== Introducing ReactJS
-
+ReactJS is the view-only library.
 
 include::react-pre-render.adoc[]

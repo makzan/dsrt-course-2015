@@ -57,3 +57,6 @@ For example, we sure need the iOS native API to implement the background playbac
 But we actually can still make use of the web technologies somewhere. For example, we can build the interface in web view. There are connections between web and the native API.
 
 // * Entertainment
+
+
+More on: http://www.makzan.net/mobile-web-app-dev-with-phonegap/app-categories/[App Categories]

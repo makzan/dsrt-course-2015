@@ -4,6 +4,8 @@
 
 It’s an art to design user interface for app.
 
+include::ui-in-different-platforms.adoc[]
+
 include::tapping-area.adoc[]
 
 include::mobile-navigation.adoc[]

@@ -9,3 +9,9 @@ There is a comfort zone for tapping when holding one hand. It's located at the c
 TODO: Comparability between different phone sizes.
 
 Recommend book: TapWorthy
+
+
+
+image::images/actionsheet.jpg[]
+
+image::images/ios-app-ui.jpg[]
