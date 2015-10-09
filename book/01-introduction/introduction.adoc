@@ -14,3 +14,9 @@ include::sections/app-type.adoc[]
 include::sections/why-web.adoc[]
 
 include::sections/app-vs-web.adoc[]
+
+include::sections/web-for-android.adoc[]
+
+include::sections/basecamp-hybrid.adoc[]
+
+include::sections/facebook-app-web.adoc[]

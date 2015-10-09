@@ -2,6 +2,8 @@
 
 There is different expectations between using an app and browsing a web site.
 
+image::images/web-vs-app-ui.jpg[]
+
 .App
 - Get things done
 - Usability
@@ -27,7 +29,7 @@ Actually there is no such thing about app must win or web must win. They can bot
 
 === The process of building native app vs web app
 
-TODO: the graph
+image::images/web-vs-app.jpg[]
 
 Using the pure web technology to build app is fast.
 

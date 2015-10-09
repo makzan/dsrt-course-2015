@@ -20,6 +20,8 @@ include::book/0x-desktop-web-app/desktop-web-app.adoc[leveloffset=+1]
 
 include::book/0x-rain-or-not/rain-or-not.adoc[leveloffset=+1]
 
+include::book/0x-offline/offline.adoc[leveloffset=+1]
+
 include::book/0x-react/react.adoc[leveloffset=+1]
 
 include::book/0x-web-accessibility/web-accessibility.adoc[leveloffset=+1]

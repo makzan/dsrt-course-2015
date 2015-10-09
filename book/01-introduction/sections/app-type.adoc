@@ -22,20 +22,21 @@ Such as:
 
 * compare to the weather full feature app
 
-Tiny tools that does one thing great
-
+Tiny tools that does one thing great.
 
 * Productivity tools
 
+An entire suite of application, such as Microsoft Office, iWorks.
+
 * Photography
 
-Usually it needs to be. Active to access the camera stream.
+Usually it needs to be native to access the camera stream.
 
 In web, we often only have access to a taken photo instead of getting the real time camera data.
 
-But actually it depends on what he photography app does.
+But actually it depends on what the photography app we want to build.
 
-For example, the Funny Face project only needs a taken photo and add fun faces on it. In real world example, it would be the Minions promotion website.
+// For example, the Funny Face project only needs a taken photo and add fun faces on it. In real world example, it would be the Minions promotion website.
 
 * Games
 
@@ -55,4 +56,4 @@ For example, we sure need the iOS native API to implement the background playbac
 
 But we actually can still make use of the web technologies somewhere. For example, we can build the interface in web view. There are connections between web and the native API.
 
-* Entertainment
+// * Entertainment
