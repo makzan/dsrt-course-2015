@@ -12,7 +12,7 @@ By http://makzan.net[Makzan].
 This is the course material I created for the cross-platform development class. in this course, we will explore different approaches and choices to build app for different platforms, mainly iOS, Android and web.
 
 1. link::01-introduction.html[]
-1. link::02-user-interface.html[]
+1. link::02-user-interface-design.html[]
 1. link::03-getting-sensor-value.html[]
 1. link::0x-rain-or-not.html[]
 1. link::0x-offline-and-storage.html[]

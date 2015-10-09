@@ -12,7 +12,7 @@ This is the course material I created for the cross-platform development class. 
 
 include::book/01-introduction/0-introduction.adoc[leveloffset=+1]
 
-include::book/02-user-interface/0-user-interface.adoc[leveloffset=+1]
+include::book/02-user-interface-design/0-user-interface-design.adoc[leveloffset=+1]
 
 include::book/03-getting-sensor-value/getting-sensor-value.adoc[leveloffset=+1]
 
