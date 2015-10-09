@@ -7,4 +7,4 @@
 5. Then, fine tuning the web for touch CSS
 6. Then, moving more part that requires high performance info native.
 
-It's a process. A transition. Won't archive it at one step.
+It's a process. A transition. It won't archive the current state at one step.

@@ -5,49 +5,13 @@ v0.2, 2015-10-08
 This is an introduction course. We focus on how things should work. We won't learns a lot of in depth coding skill. But you need to know what is good enough , what is great and what is bad.
 
 
-== tapping area
 
-When we design the user interface for mobile apps, we have to consider how the user will really use the app.
-
-Is the app easy to use when user uses it in one hand mode? How about left hand and right hand? How about the difference between a small phone (iPhone 5s) and large phone (iPhone 6 Plus)?
-
-There is a comfort zone for tapping when holding one hand. It's located at the center and near the middle to bottom area.
-
-TODO: Comparability between different phone sizes.
-
-Recommend book: TapWorthy
 
 == Books to read and learn
 
 Js recommend book:
 JavaScript the good part
 Learn ES6
-
-
-
-== Current status of Mobile web app
-- Pure mobile web
-- Expectation: app vs web
-- Hybrid approach
-
-=== Pure web app
-
-Here you can find few examples on pure web app.
-
-When the forecast.io debuts, it is called the best weather app that you won't find in the App Store.
-
-PieGuy
-forecast.io
-
-
-
-=== Hybrid approach
-Take the benefits of both app platform and web technology
-Native part to gain native code performance and hardware access
-Web technology for user interface creation
-NOTE: app gesture and touch handling is better
-
-
 
 
 
@@ -122,30 +86,6 @@ Possible remote storage option:
 
 
 == Push Notification
-
-
-== Making web app offline
-
-There are two levels of caching things offline.
-
-1. Storing the user data
-2. Caching the files, including the HTML, CSS and JavaScript
-
-The first one still needs Internet access to fetch the app files, which is the HTML, JavaScript logic and the CSS styles. The second one, cache these files as well to archive truly offline usage. You can even power on the iPhone in airplane mode and the web app still works without Internet.
-
-
-
-== Offline example
-
-
-1. Go to the PieGuy web page in mobile Safari.
-2. Add the PieGuy to home screen.
-3. Open the PieGuy game once, with Internet access.
-4. Take the phone offline by turning on airplane mode. You may even turn off the iPhone and turn it on again.
-5. Launch the PieGuy game from home screens and the game should work without issues.
-
-
-== AppCache
 
 
 

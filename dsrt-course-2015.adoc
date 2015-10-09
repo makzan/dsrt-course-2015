@@ -1,6 +1,6 @@
 = DSRT Course Material 2015
 Makzan <mak@makzan.net>
-v1.0, October 4, 2015: First Draft
+v1.0, October 9, 2015: First Draft
 :doctype: book
 :docinfo:
 :toc: left
@@ -10,11 +10,11 @@ v1.0, October 4, 2015: First Draft
 
 This is the course material I created for the cross-platform development class. in this course, we will explore different approaches and choices to build app for different platforms, mainly iOS, Android and web.
 
-include::book/01-introduction/introduction.adoc[leveloffset=+1]
+include::book/01-introduction/0-introduction.adoc[leveloffset=+1]
 
-include::book/02-getting-sensor-value/getting-sensor-value.adoc[leveloffset=+1]
+include::book/02-mobile-navigation/0-user-interface.adoc[leveloffset=+1]
 
-include::book/0x-mobile-navigation/mobile-navigation.adoc[leveloffset=+1]
+include::book/03-getting-sensor-value/getting-sensor-value.adoc[leveloffset=+1]
 
 include::book/0x-desktop-web-app/desktop-web-app.adoc[leveloffset=+1]
 
@@ -22,6 +22,6 @@ include::book/0x-rain-or-not/rain-or-not.adoc[leveloffset=+1]
 
 include::book/0x-offline/offline.adoc[leveloffset=+1]
 
-include::book/0x-react/react.adoc[leveloffset=+1]
+include::book/0x-react/0-react.adoc[leveloffset=+1]
 
 include::book/0x-web-accessibility/web-accessibility.adoc[leveloffset=+1]

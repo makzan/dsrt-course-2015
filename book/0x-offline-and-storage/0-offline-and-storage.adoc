@@ -1,4 +1,6 @@
 = Offline
+:toc: left
+:linkcss:
 
 We can make our web app offline to use.
 
@@ -11,6 +13,8 @@ There are two levels of caching things offline.
 
 The first one still needs Internet access to fetch the app files, which is the HTML, JavaScript logic and the CSS styles. The second one, cache these files as well to archive truly offline usage. You can even power on the iPhone in airplane mode and the web app still works without Internet.
 
+
+include::storage-options.adoc[]
 
 
 == Offline example

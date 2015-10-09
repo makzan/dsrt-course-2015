@@ -5,4 +5,4 @@
 == Introducing ReactJS
 
 
-include::sections/react-pre-render.adoc[]
+include::react-pre-render.adoc[]

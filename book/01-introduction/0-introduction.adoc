@@ -1,0 +1,27 @@
+= Introduction
+:toc: left
+:linkcss:
+
+Getting ready.
+
+Before we jump right into code, let's warm up with some preparation and introduction.
+
+== Living document
+
+This is a living document that I will keep updating it through out the course.
+
+include::prepare.adoc[]
+
+include::app-type.adoc[]
+
+include::why-web.adoc[]
+
+include::app-vs-web.adoc[]
+
+include::web-for-android.adoc[]
+
+include::basecamp-hybrid.adoc[]
+
+include::facebook-app-web.adoc[]
+
+include::current-state-of-web-app.adoc[]
