@@ -1,0 +1,8 @@
+{
+  "name": "dsrt2015-surge",
+  "version": "1.0.0",
+  "description": "DSRT2015",
+  "devDependencies": {
+    "surge": "^0.15.0"
+  }
+}
