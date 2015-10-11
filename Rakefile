@@ -35,6 +35,7 @@ namespace :book do
   desc 'build each chapter'
   task :build_chapter_html => :prebuild do
     puts "Converting chapters to HTML..."
+    `bundle exec asciidoctor -D output dsrt-course-2015-index.adoc`
     `bundle exec asciidoctor -a linkcss -D output book/*/*.adoc`
     puts " -- HTML output done in output/"
   end
