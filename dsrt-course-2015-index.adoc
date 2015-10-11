@@ -11,11 +11,11 @@ By http://makzan.net[Makzan].
 
 This is the course material I created for the cross-platform development class. in this course, we will explore different approaches and choices to build app for different platforms, mainly iOS, Android and web.
 
-1. link::0-introduction.html[]
-2. link::0-user-interface-design.html[]
-3. link::0-getting-sensor-value.html[]
-4. link::0-rain-or-not.html[]
-5. link::0-offline-and-storage.html[]
-6. link::0-react.html[]
-7. link::0-desktop-web-app.html[]
-8. link::0-web-accessibility.html[]
+1. link:0-introduction.html[]
+2. link:0-user-interface-design.html[]
+3. link:0-getting-sensor-value.html[]
+4. link:0-rain-or-not.html[]
+5. link:0-offline-and-storage.html[]
+6. link:0-react.html[]
+7. link:0-desktop-web-app.html[]
+8. link:0-web-accessibility.html[]
