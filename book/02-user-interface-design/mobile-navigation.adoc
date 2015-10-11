@@ -37,13 +37,13 @@ image::images/edit-tabs.jpg[]
 +
 .9-grid navigation in original Facebook app.
 image::images/facebook-9-grid.jpg[]
-1. Then list view
-1. Then hamburger menu
-1. Then double hamburger menu
+2. Then list view
+3. Then hamburger menu
+4. Then double hamburger menu
 +
 .Hamburger menu in Facebook app.
 image::images/facebook-2-hamburger.png[]
-1. Then removed main hamburger menu and back to tab
+5. Then removed main hamburger menu and back to tab
 +
 .Tab approach in the latest Facebook app.
 image::images/facebook-tabs.jpg[]
