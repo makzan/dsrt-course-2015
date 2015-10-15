@@ -11,6 +11,8 @@ By http://makzan.net[Makzan].
 
 This is the course material I created for the cross-platform development class. in this course, we will explore different approaches and choices to build app for different platforms, mainly iOS, Android and web.
 
+link:dsrt-course-2015.html[Read one page version]
+
 1. link:0-introduction.html[]
 2. link:0-user-interface-design.html[]
 3. link:0-getting-sensor-value.html[]
