@@ -16,7 +16,7 @@ include::book/02-user-interface-design/0-user-interface-design.adoc[leveloffset=
 
 include::book/03-getting-sensor-value/0-getting-sensor-value.adoc[leveloffset=+1]
 
-include::book/0x-rain-or-not/0-rain-or-not.adoc[leveloffset=+1]
+include::book/04-rain-or-not/0-rain-or-not.adoc[leveloffset=+1]
 
 include::book/0x-offline-and-storage/0-offline-and-storage.adoc[leveloffset=+1]
 

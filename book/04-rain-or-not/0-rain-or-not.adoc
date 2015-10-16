@@ -77,7 +77,7 @@ And here is the result of that API.
 
 === Code for rain
 
-According to the http://bugs.openweathermap.org/projects/api/wiki/Weather_Condition_Codes[API doc]: 
+According to the http://bugs.openweathermap.org/projects/api/wiki/Weather_Condition_Codes[API doc]:
 
 
 We check the "weather" code. When the code starts at 5, it rains.
@@ -304,3 +304,10 @@ navigator.geolocation.getCurrentPosition(function(location) {
 ----
 
 By the way: Do you know that using comma when logging objects to console is better than having them concatenated together?
+
+
+== Further Improvement
+
+include::homescreen-configuration.adoc[]
+
+include::launch-screen.adoc[]

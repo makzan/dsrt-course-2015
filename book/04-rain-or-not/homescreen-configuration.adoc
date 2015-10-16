@@ -1,0 +1,105 @@
+=== Configuration for Homescreen Web App
+
+Making an app icon for your web app
+
+We can further improve our application by adding an icon for the homescreen. This is done by adding some meta data.
+
+Apple introduce this capability first. It is done by using several link and meta tags:
+
+[source,html]
+----
+<link rel="apple-touch-icon" href="/custom_icon.png">
+----
+
+[source,html]
+----
+<link rel="apple-touch-icon" href="touch-icon-iphone.png">
+<link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
+----
+
+
+[source,html]
+----
+<meta name="apple-mobile-web-app-capable" content="yes">
+----
+
+In Android, these Apple link and tags are also supported for backward compatibility. Also it provides a non-vendor-prefixed version. For example, the icon becomes:
+
+[source,html]
+----
+<link rel="icon" sizes="192x192" href="nice-highres.png">
+----
+
+And the full screen app configure becomes:
+
+[source,html]
+----
+<meta name="mobile-web-app-capable" content="yes">
+----
+
+Since there are so many conflagrations to set up, the latest version of Google Chrome introduces a manifest file which is in JSON format to store all these configurations:
+
+[source,html]
+----
+<link rel="manifest" href="manifest.json">
+----
+
+.Example from Chrome doc.
+[source,json]
+----
+{
+  "name": "Web Application Manifest Sample",
+  "icons": [
+    {
+      "src": "launcher-icon-0-75x.png",
+      "sizes": "36x36",
+      "type": "image/png",
+      "density": 0.75
+    },
+    {
+      "src": "launcher-icon-1x.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "density": 1.0
+    },
+    {
+      "src": "launcher-icon-1-5x.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "density": 1.5
+    },
+    {
+      "src": "launcher-icon-2x.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "density": 2.0
+    },
+    {
+      "src": "launcher-icon-3x.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "density": 3.0
+    },
+    {
+      "src": "launcher-icon-4x.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "density": 4.0
+    }
+  ],
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "landscape"
+}
+----
+
+You may find The office of documentation in the following Apple site and the Chrome developer site.
+
+https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html[Apple Developer Site]
+
+https://developer.chrome.com/multidevice/android/installtohomescreen[Chrome Developer Site]
+
+
+Also, here is http://www.mobilexweb.com/blog/home-screen-web-apps-android-chrome-31[a useful tutorial to setup homescreen app for both iOS and Android]
