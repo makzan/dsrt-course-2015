@@ -1,0 +1,55 @@
+=== Getting Gyroscope & Accelerometer
+
+Getting raw data
+
+[source,javascript]
+----
+window.addEventListener('devicemotion', function (e) {
+  this.acceleration = e.acceleration;
+});
+----
+
+==== The code example
+
+In this example, we use a list to display the value history.
+
+[source,html]
+----
+<ul id="x" class="history">
+  <li>No Data Yet</li>
+</ul>
+----
+
+We use an array to store the history of the value. And set a limit count to the array.
+
+[source,javascript]
+----
+app.xValues = [];
+window.addEventListener('devicemotion', function (e) {
+  app.xValues.push(e.acceleration.x);
+  var listLimit = 15;
+  if (app.xValues.length > listLimit) {
+    // remove the old records when list too long.
+    app.xValues.splice(0, 1);
+  }
+
+  app.view.update();
+});
+----
+
+[source,javascript]
+----
+app.view = {}
+app.view.update = function(){
+  this.renderHistory($('#x'), app.xValues);
+}
+
+app.view.renderHistory = function(element, data) {
+  $(element).empty();
+  for (var i = app.xValues.length - 1; i >= 0; i--) {
+    $(element).append("<li>" + Math.floor(data[i]*1000) + "</li>");
+  };
+}
+----
+
+Note that this code only shows the handling of X value. There are Y and Z value in accelerometer sensor that share very similar logic.
