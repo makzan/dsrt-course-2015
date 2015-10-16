@@ -6,7 +6,7 @@ In this chapter, we explore different JavaScript API to get device sensors.
 
 == Getting device information in web app
 
-include::orientation.adoc[]
+There are many API in web browser to allow us to get the device information. This includes the GPS location. It also allows us to know how users holds the mobile device by using the gyroscope and accelerometer sensors.
 
 include::gyroscope-and-accelerometer.adoc[]
 

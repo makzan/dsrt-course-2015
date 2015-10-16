@@ -5,15 +5,6 @@ v0.3, 2015-10-16
 This is an introduction course. We focus on how things should work. We won't learns a lot of in depth coding skill. But you need to know what is good enough , what is great and what is bad.
 
 
-=== Further improvement
-
-
-
-Making a launch screen for your web app
-
-== Web app launching screen
-
-Make it the screen of the first screen without all the dynamic content.
 
 == distribution channels
 
