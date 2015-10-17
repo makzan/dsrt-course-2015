@@ -1,4 +1,6 @@
-== The basic of jQuery mobile
+= The basic of jQuery mobile
+:toc: left
+:linkcss:
 
 NOTE: You may find the code at http://code.jquery.com.
 
@@ -18,7 +20,7 @@ Then we put all pages into one single page. And we give every page an ID. Then w
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 ++++
 
-=== The progressive enhancement way
+== The progressive enhancement way
 
 This is known as progressive enhancement. The site works perfectly even in non-JS environment.
 
@@ -29,6 +31,6 @@ Progressive enhancement means we make the HTML works without the needs of CSS an
 It's not a fall back strategy. We use the word fallback means we design for the latest browser and use workarounds to make it works in older browsers. But we should think in the opposite way. We always design the web page that works in all browsers, including screen readers. Then we use the latest technologies to enhance the experience. The result may be similar, but the mindset is totally different.
 
 
-=== Custom Page Transition
+== Custom Page Transition
 
 http://makzan.net/mobile-web-app-dev-with-phonegap/customize-page-transition/
