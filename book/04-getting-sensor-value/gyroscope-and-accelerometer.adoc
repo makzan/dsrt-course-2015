@@ -13,6 +13,9 @@ window.addEventListener('devicemotion', function (e) {
 
 In this example, we use a list to display the value history.
 
+.List view to display data
+image::images/list-view.jpg[]
+
 [source,html]
 ----
 <ul id="x" class="history">
@@ -39,17 +42,17 @@ window.addEventListener('devicemotion', function (e) {
 
 [source,javascript]
 ----
-app.view = {}
+app.view = {};
 app.view.update = function(){
   this.renderHistory($('#x'), app.xValues);
-}
+};
 
 app.view.renderHistory = function(element, data) {
   $(element).empty();
   for (var i = app.xValues.length - 1; i >= 0; i--) {
     $(element).append("<li>" + Math.floor(data[i]*1000) + "</li>");
   };
-}
+};
 ----
 
 Note that this code only shows the handling of X value. There are Y and Z value in accelerometer sensor that share very similar logic.

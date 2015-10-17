@@ -4,6 +4,9 @@ v0.3, 2015-10-16
 
 This is an introduction course. We focus on how things should work. We won't learns a lot of in depth coding skill. But you need to know what is good enough , what is great and what is bad.
 
+== parallax effect
+
+Using the gyroscope to offset the components in different speed.
 
 == How fast your web application loads
 

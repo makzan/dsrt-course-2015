@@ -102,4 +102,4 @@ https://developer.apple.com/library/ios/documentation/AppleApplications/Referenc
 https://developer.chrome.com/multidevice/android/installtohomescreen[Chrome Developer Site]
 
 
-Also, here is http://www.mobilexweb.com/blog/home-screen-web-apps-android-chrome-31[a useful tutorial to setup homescreen app for both iOS and Android]
+Also, here is http://www.mobilexweb.com/blog/home-screen-web-apps-android-chrome-31[a useful tutorial to setup homescreen app for both iOS and Android].

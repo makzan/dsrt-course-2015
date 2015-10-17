@@ -1,0 +1,34 @@
+== The basic of jQuery mobile
+
+NOTE: You may find the code at http://code.jquery.com.
+
+The foundation unit is page. We define div with page in data-role.
+
+Insert codepen example with jQuery mobile pages.
+
+Then we put content in the page. We may include header, footer and content by using data-role.
+
+For button, jQuery mobile comes with data-role button. It makes the button large for easy tapping.
+
+Then we put all pages into one single page. And we give every page an ID. Then we can link between pages with a href and hash anchor.
+
+.Codepen template to get start writing jQuery Mobile.
+++++
+<p data-height="271" data-theme-id="0" data-slug-hash="EVbjyq" data-default-tab="result" data-user="makzan" class='codepen'>See the Pen <a href='http://codepen.io/makzan/pen/EVbjyq/'>jQuery Mobile Starter</a> by Thomas Seng Hin Mak (<a href='http://codepen.io/makzan'>@makzan</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+++++
+
+=== The progressive enhancement way
+
+This is known as progressive enhancement. The site works perfectly even in non-JS environment.
+
+If we are targeting the web app only for app stores, we may not need to support browser without JS, we can assume the web view that runs out application is a modern one with latest JavaScript supports. If we, however, want to put our web app also on the web, we want to ensure we apply proper progressive enhancement techniques.
+
+Progressive enhancement means we make the HTML works without the needs of CSS and JavaScript.
+
+It's not a fall back strategy. We use the word fallback means we design for the latest browser and use workarounds to make it works in older browsers. But we should think in the opposite way. We always design the web page that works in all browsers, including screen readers. Then we use the latest technologies to enhance the experience. The result may be similar, but the mindset is totally different.
+
+
+=== Custom Page Transition
+
+http://makzan.net/mobile-web-app-dev-with-phonegap/customize-page-transition/

@@ -1,5 +1,8 @@
 === Visualize the accelerometer value history a bar chart
 
+.Bar chart visualization
+image::images/bar-chart.jpg[]
+
 We will use canvas to visualize the value of each axis. You can test the app here: http://mztests.herokuapp.com/motion/
 
 [source,html]
@@ -14,6 +17,9 @@ We will use canvas to visualize the value of each axis. You can test the app her
 ----
 
 We will use a graph to show the historical values of the sensor.
+
+.drawBar function
+image::images/draw-bar.jpg[]
 
 [source,javascript]
 ----
