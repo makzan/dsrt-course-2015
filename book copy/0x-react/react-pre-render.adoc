@@ -1,5 +1,0 @@
-== Server side pre-rendering React component
-
-Why we need to pre render the React component?
-
-That's fallback for browsers that don't have JavaScript support.

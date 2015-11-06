@@ -1,7 +1,0 @@
-== User interface in different platforms
-
-Which platform is which?
-
-image::images/cross-platforms.png[]
-
-image::images/ios-android.jpg[]

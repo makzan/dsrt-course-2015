@@ -19,12 +19,14 @@ Please note that both key and value are in **string format**. If you try to stor
 
 So usually, we use JSON.parse and JSON.stringify to convert the object data between object and string format.
 
-Local storage key with structure
+=== Local storage key with structure
 
 The key is string as well. But we can use some strategy to make the key access with structure. For example, if we are about to store todo lists and tasks for each list.
 
 Here is what we can do.
 
+.Local Storage example.
+[source, javascript]
 ----
 localStorage["lists"] = "[1,2,5]";
 localStorage["lists:1"] = "Default list";
@@ -37,17 +39,17 @@ localStorage["lists:5:tasks"] = "[]";
 
 By iterating the lists, we can get a list of list ID. Then we can display the list names by accessing the lists:<ID>. For each tasks, we can access the lists:<ID>:tasks. 
 
-Storage
+=== Storage
 
 Local storage data is stored in cache file persistently, until user removes them manually or when file storage is full.
 
-Other Options
+=== Other Options
 
 Another option is to use the IndexedDB, which is a full database engine.
 
 There was WebSQL option too but it is deprecated and browser is dropping support to it.
 
 
-Remote Storage Options
+=== Remote Storage Options
 
 Parse.com

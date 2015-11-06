@@ -2,6 +2,8 @@
 :toc: left
 :linkcss:
 
-ReactJS is the view-only library.
+ReactJS is the view-only library, developed by Facebook.
 
 include::react-pre-render.adoc[]
+
+include::react-native.adoc[]

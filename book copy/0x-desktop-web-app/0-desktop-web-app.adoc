@@ -1,9 +1,0 @@
-= Desktop Web App
-:toc: left
-:linkcss:
-
-Using web technologies to build desktop application.
-
-include::fluid.adoc[]
-
-include::introducing-electron.adoc[]

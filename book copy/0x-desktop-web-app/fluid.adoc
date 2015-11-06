@@ -1,3 +1,0 @@
-== Example—Fluid app
-
-I actually wrap many of web services I use every day into desktop application by using an app called Fluid. I provide the URL to the Fluid app. Then It basically use a web view to load the URL in a separated app container. The result is I can have them in my dock for easy access.

@@ -2,6 +2,27 @@
 
 App Cache requires a manifest file in the HTML tag.
 
+.Defining appcache file.
+[source, html]
+----
+<html manifest="example.appcache">
+----
+
+The following is a very simple AppCache manifest.
+
+.Sample AppCache manifest.
+----
+CACHE MANIFEST
+# 2015-11-11.v3
+
+CACHE:
+/favicon.ico
+index.html
+stylesheet.css
+images/logo.png
+scripts/web.js
+----
+
 === Steps for cache operation
 
 1. Browser see there is a manifest file.
@@ -17,6 +38,8 @@ When the browser loads the HTML file with the AppCache manifest, it checks if it
 === Invalidation
 
 The invalidation method is to change the content of manifest file. As we mentioned above, browser checks if the app cache manifest file is changed when loading the page. If the content of the manifest is changed, browser re-run the cache operation.
+
+That’s why I add a comment line, which begins with `#`, to the manifest file. The file is considered changed even I change a character in that comment file. I can use that comment line to force browser to load a new version of the asset files by bumping up the version number or the date. This is useful in the development stage that you need to debug and keep refreshing the code files. 
 
 === Further Reading
 
