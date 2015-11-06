@@ -25,6 +25,7 @@ The key is string as well. But we can use some strategy to make the key access w
 
 Here is what we can do.
 
+----
 localStorage["lists"] = "[1,2,5]";
 localStorage["lists:1"] = "Default list";
 localStorage["lists:1:tasks"] = "['Send emil to John', 'Reply Kim on schedule']";
@@ -32,6 +33,7 @@ localStorage["lists:2"] = "Shopping";
 localStorage["lists:2:tasks"] = "['bread','eggs','Ice cream']";
 localStorage["lists:5"] = "New list";
 localStorage["lists:5:tasks"] = "[]";
+----
 
 By iterating the lists, we can get a list of list ID. Then we can display the list names by accessing the lists:<ID>. For each tasks, we can access the lists:<ID>:tasks. 
 
