@@ -8,8 +8,10 @@ namespace :book do
     Dir.mkdir 'output/images' unless Dir.exists? 'output/images'
     Dir.mkdir 'images' unless Dir.exists? 'images'
     Dir.glob("book/*/images/*").each do |image|
-      FileUtils.copy(image, "output/images/" + File.basename(image))
       FileUtils.copy(image, "images/" + File.basename(image))
+    end
+    Dir.glob("images/*").each do |image|
+      FileUtils.copy(image, "output/images/" + File.basename(image))
     end
 
     # Copy anything in public
