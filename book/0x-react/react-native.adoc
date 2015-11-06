@@ -1,0 +1,30 @@
+React native is a framework to let you describe the native app user interface in JSX-like format. It also allows using CSS-like stylesheet with Flexbox properties to layout the UI components.
+
+For example, we can use <ListView> to represent a list of collection. In iOS, the react-native component will use the native UITableView. In Android, it will use the native ListView.
+
+Here is the sample code of a ListView.
+
+Then we provide the ListView a data source.
+
+For each cell, we define how the cell layout by using the Flexbox component.
+
+We also defines what happens when each cell is tapped. For example, we tells the navigation controller to push to the next view with content of the selected cell.
+
+Observation
+
+You can see that it’s very easy to create a table view for both Android and iOS.
+
+But when we need to create something that’s not as usual? For example, when we need to trigger some heavy logic when we turn on a switch in the table view cell1? 
+
+The benefits
+
+- React Native allows us to use the web-like method to describe the interface. This creates a no barrier for web designers to write their app.
+- The same JSX file can be transpile into both iOS and Android native UI components. It encourages more code sharing between the platform.
+- The same JSX definition for both platform helps creating a universal UI language. It helps forming a community.
+
+The concerns
+
+- React-native adds a layer on top of the native components, which may increase the complexity. For example, debugging may be harder when things not work as designed.
+- The React team, or someone, have to decide what and how the UI components to include into the React components. It means when a new UI component is introduced, we need to wait until the React-native supports it.
+- React is a view-only library. In React-native, since the view is described in JSX, its very easy for the developer to use JavaScript in other part of the code, model and controller etc. That means developer will write the entire native app in JavaScript. It is not impossible. It is just lost all the benefits of Swift or Java provides, such as type checking.
+- Calling native Cocoa class in JSX requires a wrapper to bridge between the native Cocoa API and the JSX, which shares the same concern of adding an extra layer.

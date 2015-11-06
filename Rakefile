@@ -41,7 +41,16 @@ namespace :book do
   task :build_chapter_html => :prebuild do
     puts "Converting chapters to HTML..."
     `bundle exec asciidoctor -D output index.adoc`
-    `bundle exec asciidoctor -a source-highlighter=highlightjs -a linkcss -D output book/*/*.adoc`
+    # `bundle exec asciidoctor -a source-highlighter=highlightjs -a linkcss -D output book/*/*.adoc`
+    `mkdir output/01-introduction; bundle exec asciidoctor -a source-highlighter=highlightjs -a linkcss -D output/01-introduction book/01-introduction/index.adoc`
+    `mkdir output/02-user-interface-design; bundle exec asciidoctor -a source-highlighter=highlightjs -a linkcss -D output/02-user-interface-design book/02-user-interface-design/index.adoc`
+    `mkdir output/03-jquery-mobile; bundle exec asciidoctor -a source-highlighter=highlightjs -a linkcss -D output/03-jquery-mobile book/03-jquery-mobile/index.adoc`
+    `mkdir output/04-getting-sensor-value; bundle exec asciidoctor -a source-highlighter=highlightjs -a linkcss -D output/04-getting-sensor-value book/04-getting-sensor-value/index.adoc`
+    `mkdir output/05-rain-or-not; bundle exec asciidoctor -a source-highlighter=highlightjs -a linkcss -D output/05-rain-or-not book/05-rain-or-not/index.adoc`
+    `mkdir output/06-offline-and-storage; bundle exec asciidoctor -a source-highlighter=highlightjs -a linkcss -D output/06-offline-and-storage book/06-offline-and-storage/index.adoc`
+    `mkdir output/0x-react; bundle exec asciidoctor -a source-highlighter=highlightjs -a linkcss -D output/0x-react book/0x-react/index.adoc`
+    `mkdir output/0x-desktop-web-app; bundle exec asciidoctor -a source-highlighter=highlightjs -a linkcss -D output/0x-desktop-web-app book/0x-desktop-web-app/index.adoc`
+    `mkdir output/0x-web-accessibility; bundle exec asciidoctor -a source-highlighter=highlightjs -a linkcss -D output/0x-web-accessibility book/0x-web-accessibility/index.adoc`
     puts " -- HTML output done in output/"
   end
 end

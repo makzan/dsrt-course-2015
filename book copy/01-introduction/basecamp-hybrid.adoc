@@ -1,0 +1,12 @@
+== Case study—Basecamp for mobile
+
+1. Pure server side render
+2. Then client capture the request and create the iOS view hierarchy.
+3. Navigation controller, push and pop Modal view controller
+4. Then making some elements native, such as the menu.
+5. Then, fine tuning the web for touch CSS
+6. Then, moving more part that requires high performance info native.
+
+It's a process. A transition. It won't archive the current state at one step.
+
+image::images/campare-basecamp-web-ios.gif[]

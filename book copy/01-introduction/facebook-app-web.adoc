@@ -1,0 +1,9 @@
+== Case study—Facebook app
+
+At the beginning, Facebook app uses a 9-grid navigation which was a native Objective-C app.
+
+Then it changes to a modern table view layout, still as native app.
+
+Then, Facebook changes the entire app into HTML5 to support one codebase with multiple platforms.
+
+The team didn’t satisfy with the performance and they used months to rebuild the app into native app again. The same outlook, but everything are coded in Xcode.

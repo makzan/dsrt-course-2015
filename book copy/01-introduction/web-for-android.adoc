@@ -1,0 +1,6 @@
+== Android JavaScript performance
+
+Very poor.
+iPhone 5 level
+
+Expect it will be slow to run a heavy client side JavaScript framework in Android.

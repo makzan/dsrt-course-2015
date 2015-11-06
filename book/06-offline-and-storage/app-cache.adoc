@@ -1,0 +1,25 @@
+== AppCache
+
+App Cache requires a manifest file in the HTML tag.
+
+=== Steps for cache operation
+
+1. Browser see there is a manifest file.
+2. Browser loads the manifest file. Inside, it find s a list of files to be downloaded.
+3. Browser download each file in the list to cache them.
+4. If browser fails to download any of the files in the list, the operation abort and nothing is cached.
+5. If browser successes to download all the files, the operation successes and all these files are now available locally.
+
+=== Loading Cached files
+
+When the browser loads the HTML file with the AppCache manifest, it checks if it’s the same manifest file. If it’s the same one, browser uses all the cached files.
+
+=== Invalidation
+
+The invalidation method is to change the content of manifest file. As we mentioned above, browser checks if the app cache manifest file is changed when loading the page. If the content of the manifest is changed, browser re-run the cache operation.
+
+=== Further Reading
+
+For more detail on using the AppCache, please check the HTML5Rocks tutorial:
+
+http://www.html5rocks.com/en/tutorials/appcache/beginner/

@@ -1,0 +1,21 @@
+== How this course is constructed
+
+There are different individual topics that we are going to cover in this course. You can find the course entry point at http://dsrt2015.surge.sh
+
+// DELETED: The entry point provides the outline links to each individual topic. It also comes with a log to show the changes I have made from time to time.
+
+== About this course
+
+In my part of the course, we focus on different web technologies to create mobile web app.
+
+You'll need to know basic HTML, CSS, and Javascript.
+
+We will also explore how we can make use of native platform resources to create hybrid app.
+
+You can refer to my past course materials on http://makzan.net[makzan.net] for some basic skills.
+
+Specifically, you may find my mobile related course material in the following:
+
+- http://www.makzan.net/introducing-web-design/
+- http://www.makzan.net/mobile-web-design/
+- http://www.makzan.net/mobile-web-app-dev-with-phonegap/

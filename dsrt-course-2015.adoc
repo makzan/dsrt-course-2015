@@ -10,20 +10,20 @@ v1.0, October 9, 2015: First Draft
 
 This is the course material I created for the cross-platform development class. in this course, we will explore different approaches and choices to build app for different platforms, mainly iOS, Android and web.
 
-include::book/01-introduction/0-introduction.adoc[leveloffset=+1]
+include::book/01-introduction/index.adoc[leveloffset=+1]
 
-include::book/02-user-interface-design/0-user-interface-design.adoc[leveloffset=+1]
+include::book/02-user-interface-design/index.adoc[leveloffset=+1]
 
-include::book/03-jquery-mobile/0-jquery-mobile.adoc[leveloffset=+1]
+include::book/03-jquery-mobile/index.adoc[leveloffset=+1]
 
-include::book/04-getting-sensor-value/0-getting-sensor-value.adoc[leveloffset=+1]
+include::book/04-getting-sensor-value/index.adoc[leveloffset=+1]
 
-include::book/05-rain-or-not/0-rain-or-not.adoc[leveloffset=+1]
+include::book/05-rain-or-not/index.adoc[leveloffset=+1]
 
-include::book/0x-offline-and-storage/0-offline-and-storage.adoc[leveloffset=+1]
+include::book/06-offline-and-storage/index.adoc[leveloffset=+1]
 
-include::book/0x-react/0-react.adoc[leveloffset=+1]
+include::book/0x-react/index.adoc[leveloffset=+1]
 
-include::book/0x-desktop-web-app/0-desktop-web-app.adoc[leveloffset=+1]
+include::book/0x-desktop-web-app/index.adoc[leveloffset=+1]
 
-include::book/0x-web-accessibility/0-web-accessibility.adoc[leveloffset=+1]
+include::book/0x-web-accessibility/index.adoc[leveloffset=+1]

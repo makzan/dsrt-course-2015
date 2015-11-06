@@ -1,0 +1,315 @@
+= Rain or Not
+:toc: left
+:linkcss:
+
+This is an example of using jQuery, jQuery mobile and GPS data.
+
+== Example—Rain or Not?
+
+
+In jQuery, we use `$.getJSON` to fetch JSON data from web service’s API.
+
+The API:
+
+http://api.openweathermap.org/data/2.5/weather?q=Macau,MO
+
+Viewing JSON output directly in web browser often comes without any formatting and make the data inspection difficult. We can make use of JSON formatter tools. Here just to name few. There are tons of them.
+
+
+In jQuery, we use $.getJSON for this purpose.
+
+[source,javascript]
+----
+(function($){
+ $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=Macao,MO', function(data){
+   console.log(data);
+ });
+}).call(this, jQuery);
+----
+
+Parse JSON
+And here is the result of that API.
+
+[source,javascript]
+----
+{
+  "coord": {
+      "lon": 113.546112,
+      "lat": 22.20056
+  },
+  "sys": {
+      "country": "MO",
+      "sunrise": 1383690767,
+      "sunset": 1383731168
+  },
+  "weather": [
+      {
+          "id": 800,
+          "main": "Clear",
+          "description": "Sky is Clear",
+          "icon": "01n"
+      }
+  ],
+  "base": "cmc stations",
+  "main": {
+      "temp": 296.215,
+      "temp_min": 296.215,
+      "temp_max": 296.215,
+      "pressure": 1027.78,
+      "sea_level": 1031.1,
+      "grnd_level": 1027.78,
+      "humidity": 95
+  },
+  "wind": {
+      "speed": 4.43,
+      "deg": 49.5008
+  },
+  "clouds": {
+      "all": 0
+  },
+  "dt": 1383755905,
+  "id": 1821274,
+  "name": "Macau",
+  "cod": 200
+}
+----
+
+
+=== Code for rain
+
+According to the http://bugs.openweathermap.org/projects/api/wiki/Weather_Condition_Codes[API doc]:
+
+
+We check the "weather" code. When the code starts at 5, it rains.
+
+=== JSON-P
+
+JSON-P means JSON with padding.
+
+For security reason, browser rejects JavaScript loading resource from the other sites.
+The following version works without security errors of cross-domain accessing resources.
+
+[source,javascript]
+----
+(function($){
+  $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=Macao,MO&callback=?', function(data){
+    console.log(data);
+  });
+}).call(this, jQuery);
+----
+
+The `callback=?`` is to tell jQuery getJSON method to use the JSON-P approach instead of cross-domain JSON loading. For security reason, browser rejects JavaScript loading resource from the other sites (domains other than where the JavaScript is executed). Either enabling cross-domain resourcing sharing in server or allowing the JSON-P in server can by pass this security restriction.
+
+
+=== Crafting our Rain-or-Not app
+This is our root page.
+
+[source,html]
+----
+<div data-role='page' id='root'>
+  <div data-role='header'>
+    <h1>Rain or Not?</h1>
+    <a class='ui-btn-right' data-role='button' data-transition='customslide' href='#about'>關於</a>
+  </div>
+  <div data-role='content' id='rain-content' class='loading'>
+  </div>
+</div>
+----
+
+The very basic yet working logic.
+
+[source,javascript]
+----
+(function($){
+  $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=Macao,MO&callback=?', function(data){
+    console.log(data);
+    var code = data.weather[0].id + ""; // force to string
+    if (code[0] === '5') { // rainy code all start at 5
+      $('#rain-content').removeClass().addClass('rain');
+    } else {
+      $('#rain-content').removeClass().addClass('sunny');
+    }
+  });
+}).call(this, jQuery);
+----
+
+NOTE: the rainy code information is from the API documentation.
+
+And the style.
+
+[source,css]
+----
+.sunny {
+  background: #ade1f9 url(../images/sunny.png) no-repeat center center;
+}
+.rain {
+  background: #ade1f9 url(../images/rain.png) no-repeat center center;
+}
+.loading {
+ background: #ade1f9 url(../images/loading.png) no-repeat center center;
+}
+
+#root {
+  background: #ade1f9;
+}
+
+#rain-content {
+  height: 400px;
+}
+----
+
+=== Refactoring
+This refactoring put DOM manipulation in view. And leave the app controller away from any DOM element.
+
+The `model.js` file.
+
+[source,javascript]
+----
+(function($){
+  var app = this.app = this.app || {};
+
+  app.model = {
+    fetch: function(query, callback) {
+      $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=' + query + '&callback=?', function(data){
+        callback(data);
+      });
+    }
+  }
+
+}).call(this, jQuery);
+----
+
+The view.js file.
+
+[source,javascript]
+----
+(function($){
+  var app = this.app = this.app || {};
+
+  app.view = {
+    update: function(weather) {
+      if (weather === 'rain') {
+        $('#rain-content').removeClass().addClass('rain');
+      } else {
+        $('#rain-content').removeClass().addClass('sunny');
+      }
+    }
+  }
+
+}).call(this, jQuery);
+----
+
+The app.js file.
+
+[source,javascript]
+----
+(function(){
+  var app = this.app = this.app || {};
+
+  app.model.fetch('Macao,MO', function(data){
+    console.log(data);
+    var code = data.weather[0].id + ""; // force to string
+    if (code[0] === '5') { // rainy code all start at 5
+      app.view.update('rain');
+    } else {
+      app.view.update('sunny');
+    }
+  });
+
+}).call(this);
+----
+
+=== Refactoring again
+
+This refactoring moves the data checking back to the model module. What app controller needs should be just the essential data, Rain or Sunny.
+
+Thin controller approach.
+
+[source,javascript]
+----
+(function(){
+  var app = this.app = this.app || {};
+
+  app.model.fetch('Macao,MO', function(weather){
+    app.view.update(weather);
+  });
+
+}).call(this);
+----
+
+And the model now handles the data.
+
+[source,javascript]
+----
+(function($){
+  var app = this.app = this.app || {};
+
+  app.model = {
+    fetch: function(query, callback) {
+      $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=' + query + '&callback=?', function(data){
+        var code = data.weather[0].id + ""; // force to string
+        if (code[0] === '5') { // rainy code all start at 5
+          callback('rain');
+        } else {
+          callback('sunny');
+        }
+      });
+    }
+  }
+
+}).call(this, jQuery);
+----
+
+=== Getting user’s geolocation
+
+https://developer.mozilla.org/en-US/docs/WebAPI/Using_geolocation
+
+[source,javascript]
+----
+navigator.geolocation.getCurrentPosition(function(location) {
+  console.log(location.coords.latitude, location.coords.longitude);
+});
+----
+
+Browser will ask for user’s permisson before fetching the location. The following is the desktop Safari prompting for the geolocation feature permission.
+
+=== Fetch weather from location
+
+[source,javascript]
+----
+navigator.geolocation.getCurrentPosition(function(location) {
+  console.log(location.coords.latitude, location.coords.longitude);
+  var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + location.coords.latitude + '&lon=' + location.coords.longitude + '&callback=?';
+  $.getJSON(url, function(data){
+    console.log(data);
+  });
+});
+----
+
+The final result in console.
+
+Weather api with geolocation
+
+And we can add an error handling callback as the second parameter for the getCurrentPosition method call.
+
+[source,javascript]
+----
+navigator.geolocation.getCurrentPosition(function(location) {
+  console.log(location.coords.latitude, location.coords.longitude);
+  var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + location.coords.latitude + '&lon=' + location.coords.longitude + '&callback=?';
+  $.getJSON(url, function(data){
+    console.log(data);
+  });
+}, function(error){console.log("ERROR", error)});
+----
+
+By the way: Do you know that using comma when logging objects to console is better than having them concatenated together?
+
+
+== Further Improvement
+
+include::homescreen-configuration.adoc[]
+
+include::launch-screen.adoc[]
+
+

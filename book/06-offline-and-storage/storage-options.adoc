@@ -1,0 +1,51 @@
+
+
+== Storage options
+
+Local storage and Remote storage
+
+Possible remote storage option:
+
+- Remote database with MongoDB service
+- Remote database with Parse.com
+- Remote database with Firebase
+
+
+=== Local Storage examples
+
+localStorage[key] = value;
+
+Please note that both key and value are in **string format**. If you try to store object directly into a local storage entry, you will get the value parsed into string before saving, which usually makes your data lost. For example, if you are storing an object, most likely the browser will convert your object into [Object object] string, which you lost all the data. Unless you override the toString method to for the conversion.
+
+So usually, we use JSON.parse and JSON.stringify to convert the object data between object and string format.
+
+Local storage key with structure
+
+The key is string as well. But we can use some strategy to make the key access with structure. For example, if we are about to store todo lists and tasks for each list.
+
+Here is what we can do.
+
+localStorage["lists"] = "[1,2,5]";
+localStorage["lists:1"] = "Default list";
+localStorage["lists:1:tasks"] = "['Send emil to John', 'Reply Kim on schedule']";
+localStorage["lists:2"] = "Shopping";
+localStorage["lists:2:tasks"] = "['bread','eggs','Ice cream']";
+localStorage["lists:5"] = "New list";
+localStorage["lists:5:tasks"] = "[]";
+
+By iterating the lists, we can get a list of list ID. Then we can display the list names by accessing the lists:<ID>. For each tasks, we can access the lists:<ID>:tasks. 
+
+Storage
+
+Local storage data is stored in cache file persistently, until user removes them manually or when file storage is full.
+
+Other Options
+
+Another option is to use the IndexedDB, which is a full database engine.
+
+There was WebSQL option too but it is deprecated and browser is dropping support to it.
+
+
+Remote Storage Options
+
+Parse.com

@@ -1,0 +1,24 @@
+= DSRT Course Material 2015
+Makzan <mak@makzan.net>
+v1.0, October 4, 2015: First Draft
+:doctype: book
+:docinfo:
+:linkcss:
+
+== DSRT Course Material 2015
+
+By http://makzan.net[Makzan].
+
+This is the course material I created for the cross-platform development class. in this course, we will explore different approaches and choices to build app for different platforms, mainly iOS, Android and web.
+
+link:dsrt-course-2015.html[Read one page version]
+
+1. link:0-introduction.html[Introduction]
+2. link:0-user-interface-design.html[User interface design]
+3. link:0-jquery-mobile.html[jQuery Mobile]
+4. link:0-getting-sensor-value.html[Getting sensor value]
+5. link:0-rain-or-not.html[Rain or not]
+6. link:0-offline-and-storage.html[Offline and storage]
+7. link:0-react.html[React]
+8. link:0-desktop-web-app.html[Desktop web app]
+9. link:0-web-accessibility.html[Web Accessibility]
