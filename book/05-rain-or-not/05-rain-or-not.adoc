@@ -98,7 +98,7 @@ The following version works without security errors of cross-domain accessing re
 }).call(this, jQuery);
 ----
 
-The `callback=?`` is to tell jQuery getJSON method to use the JSON-P approach instead of cross-domain JSON loading. For security reason, browser rejects JavaScript loading resource from the other sites (domains other than where the JavaScript is executed). Either enabling cross-domain resourcing sharing in server or allowing the JSON-P in server can by pass this security restriction.
+The `callback=?` is to tell jQuery getJSON method to use the JSON-P approach instead of cross-domain JSON loading. For security reason, browser rejects JavaScript loading resource from the other sites (domains other than where the JavaScript is executed). Either enabling cross-domain resourcing sharing in server or allowing the JSON-P in server can by pass this security restriction.
 
 
 === Crafting our Rain-or-Not app
@@ -109,7 +109,7 @@ This is our root page.
 <div data-role='page' id='root'>
   <div data-role='header'>
     <h1>Rain or Not?</h1>
-    <a class='ui-btn-right' data-role='button' data-transition='customslide' href='#about'>關於</a>
+    <a class='ui-btn-right' data-role='button' data-transition='customslide' href='#about'>About</a>
   </div>
   <div data-role='content' id='rain-content' class='loading'>
   </div>
@@ -271,7 +271,7 @@ navigator.geolocation.getCurrentPosition(function(location) {
 });
 ----
 
-Browser will ask for user’s permisson before fetching the location. The following is the desktop Safari prompting for the geolocation feature permission.
+Browser will ask for user’s permission before fetching the location. The following is the desktop Safari prompting for the geolocation feature permission.
 
 === Fetch weather from location
 

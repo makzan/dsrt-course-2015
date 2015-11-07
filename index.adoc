@@ -19,6 +19,14 @@ link:dsrt-course-2015.html[Read one page version]
 4. link:04-getting-sensor-value.html[Getting sensor value]
 5. link:05-rain-or-not.html[Rain or not]
 6. link:06-offline-and-storage.html[Offline and storage]
-7. link:0x-react.html[React]
+7. link:07-react.html[React]
 8. link:0x-desktop-web-app.html[Desktop web app]
 9. link:0x-web-accessibility.html[Web Accessibility]
+
+* * *
+
+== Download eBook
+
+- link:dsrt-course-2015.pdf[PDF version]
+- link:dsrt-course-2015.epub[ePub version]
+- link:dsrt-course-2015.mobi[Mobi version]

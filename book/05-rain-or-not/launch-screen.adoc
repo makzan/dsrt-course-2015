@@ -9,7 +9,7 @@ Make it the screen of the first screen without all the dynamic content.
 <link rel="apple-touch-startup-image" href="/startup.png">
 ----
 
-and multiple launch screen by using the media selecton:
+and multiple launch screen by using the media selection:
 
 .From http://stackoverflow.com/a/10011893[Marconi in StackOverflow]
 [source,html]
