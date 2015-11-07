@@ -14,6 +14,12 @@ namespace :book do
       FileUtils.copy(image, "output/images/" + File.basename(image))
     end
 
+    # Stylesheet folder
+    Dir.mkdir 'output/stylesheets' unless Dir.exists? 'output/stylesheets'
+    Dir.glob("stylesheets/*").each do |cssFile|
+      FileUtils.copy(cssFile, "output/stylesheets/" + File.basename(cssFile))
+    end
+
     # Copy anything in public
     Dir.glob("public/*").each do |file|
       FileUtils.copy(file, "output/" + File.basename(file))
