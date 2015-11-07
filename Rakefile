@@ -23,7 +23,7 @@ namespace :book do
   desc 'build basic book formats'
   task :build => :prebuild do
     puts "Converting to HTML..."
-    `bundle exec asciidoctor -a stylesheet=web.css -a source-highlighter=highlightjs -D output dsrt-course-2015.adoc`
+    `bundle exec asciidoctor -a stylesheet=stylesheets/web.css -a source-highlighter=highlightjs -D output dsrt-course-2015.adoc`
     puts " -- HTML output at output/dsrt-course-2015.html"
 
     puts "Converting to EPub..."
@@ -43,7 +43,7 @@ namespace :book do
   task :build_chapter_html => :prebuild do
     puts "Converting chapters to HTML..."
     `bundle exec asciidoctor -D output index.adoc`
-    `bundle exec asciidoctor -a stylesheet=web.css -a source-highlighter=highlightjs -a linkcss -D output book/*/*.adoc`
+    `bundle exec asciidoctor -a stylesheet=stylesheets/web.css -a source-highlighter=highlightjs -a linkcss -D output book/*/*.adoc`
     puts " -- HTML output done in output/"
   end
 end
