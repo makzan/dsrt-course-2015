@@ -1,0 +1,179 @@
+== Example: Displaying both current and forecast weather
+
+Let’s merge the 2 previous examples.
+
+We modify the data module to make it capable for different API calls. (One for getting current weather and one for getting forecast)
+
+
+You can find the working example in the following CodePen:
+
+http://codepen.io/makzan/pen/gaQPRp
+
+
+.Data module
+[source,js]
+----
+// Data only module
+class WeatherData {
+  constructor(cityName="Hong Kong") {
+    this.cityName = cityName;
+    this.list = [];
+    
+    this.apiKey = "9da4ab7247b9bfa529c947d04e087fc3";
+    this.apiBase = "http://api.openweathermap.org/data/2.5";
+    
+    this.fetchCurrent();
+    this.fetchForecast();
+  }
+  jsonURL(apiUrl) {
+    return `${this.apiBase}${apiUrl}${this.cityName}&APPID=${this.apiKey}`;
+  }
+  // callback(weatherData)
+  // weatherData: {cityName, weatherDescription}
+  fetchCurrent(callback) {
+    var apiUrl = "/weather?units=metric&q=";
+    fetch(this.jsonURL(apiUrl))
+      .then( (response) => {      
+        return response.json();
+      })
+      .then( (data) => {
+        this.description = data.weather[0].description;
+        callback && callback({
+          cityName: this.cityName,
+          weatherDescription: this.description
+        })
+      });
+  }
+  // callback(weatherData)
+  // weatherData: {cityName, forecastList}
+  fetchForecast(callback) {   
+    var apiUrl = "/forecast/daily?units=metric&q=";
+    fetch(this.jsonURL(apiUrl))
+      .then( (response) => {      
+        return response.json();
+      })
+      .then( (data) => {
+        this.list.length = 0;
+        for (var forecast of data.list) {
+          this.list.push({
+            date: new Date(forecast.dt * 1000),
+            description: forecast.weather[0].description,
+            tempature: forecast.temp.day
+          });
+        }
+        callback && callback({
+          cityName: this.cityName,
+          forecastList: this.list
+        })
+      });
+  }
+}
+----
+
+The two React view component are still the same. We copy them from the previous examples:
+
+.WeatherNode React class
+[source,js]
+----
+// React View module
+var WeatherNode = React.createClass({
+  getInitialState() {
+    return {
+      city: 'Somewhere',
+      weatherDescription: 'a good day'
+    }
+  },
+  componentDidMount() { 
+    var weather = this.props.source;
+    
+    weather.fetchCurrent( (data) => {
+     if (this.isMounted()) {
+        this.setState({
+          city: data.cityName,
+          weatherDescription: data.weatherDescription
+        })
+      }           
+    });  
+  },
+  render() {
+    return (
+      <p>
+        Hello <em>{this.state.city}</em>. It is <strong>{this.state.weatherDescription}</strong> today.
+      </p>
+    );
+  }
+});
+----
+
+
+.ForecastList React class
+[source,js]
+----
+var ForecastList = React.createClass({
+  getInitialState() {
+    return {
+      city: 'Somewhere',
+      forecastList: []
+    }
+  },
+  componentDidMount() { 
+    var weather = this.props.source;  
+    
+    weather.fetchForecast( (data) => {
+     if (this.isMounted()) {
+        this.setState({
+          city: data.cityName,
+          forecastList: data.forecastList
+        })
+      }           
+    });
+  },
+  render() {
+    return (
+      <div>
+        <p>7 days forecast:</p>
+        <ul>
+          {this.state.forecastList.map( (item) => { return (
+            <li>{Math.round(item.tempature)}C, {item.date.toDateString()}, {item.description}</li> 
+          ) })}
+        </ul>
+      </div>
+    );
+  }
+});
+----
+
+We group these 2 weather view into a big group. Let’s call it `WeatherComponent`. So we define a React class for that:
+
+[source,js]
+----
+var WeatherComponent = React.createClass({
+  render() {
+    return (
+      <div>
+        <WeatherNode source={this.props.source} />
+        <ForecastList source={this.props.source} />
+      </div>
+    );
+  }
+});
+----
+
+Now it’s time to use our classes.
+
+[source,js]
+----
+// data instance
+var weatherHongKong = new WeatherData("Hong Kong");
+
+// view rendering
+React.render(
+  <WeatherComponent source={weatherHongKong} />,
+  document.getElementById('weather-component')
+);
+----
+
+
+You can find the working example in the following CodePen:
+
+http://codepen.io/makzan/pen/gaQPRp

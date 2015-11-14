@@ -1,4 +1,4 @@
-== Case study—Basecamp for mobile
+== Case study―Basecamp for mobile
 
 1. Pure server side render
 2. Then client capture the request and create the iOS view hierarchy.

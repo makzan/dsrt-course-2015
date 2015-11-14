@@ -1,0 +1,173 @@
+== Example: Getting Current Weather
+
+In this example, we create a weather utility. We provide a city name―currently hard coded in the code―and the JavaScript fetches the current weather description from the OpenWeatherMap service.
+
+You can find the working example in the following CodePen:
+
+http://codepen.io/makzan/pen/JYedqb
+
+.Data class
+[source,js]
+----
+class WeatherData {
+  constructor(cityName="Hong Kong") {
+    this.cityName = cityName;
+    this.apiKey = "<YOUR API KEY HERE>";
+    this.apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=";    
+  }
+  jsonURL() {
+    return `${this.apiUrl}${this.cityName}&APPID=${this.apiKey}`;
+  }
+}
+----
+
+.React View
+[source, jsx]
+----
+var WeatherNode = React.createClass({
+  getInitialState() {
+    return {
+      city: 'Somewhere',
+      weather: 'a good day'
+    }
+  },
+  componentDidMount() { 
+    console.log(this.props.source);
+    fetch(this.props.source)
+      .then( (response) => {      
+        return response.json();
+      })
+      .then( (data) => {
+        console.log(data);
+        console.log(this);
+        if (this.isMounted()) {
+          console.log("Update state");
+          this.setState({
+            city: data.name,
+            weather: data.weather[0].description
+          })
+        }
+      });
+  },
+  render() {
+    return (
+      <p>
+        Hello <em>{this.state.city}</em>. It is <strong>{this.state.weather}</strong> today.
+      </p>
+    );
+  }
+});
+
+var weatherHongKong = new WeatherData("Hong Kong");
+
+React.render(
+  <WeatherNode source={weatherHongKong.jsonURL()} />,
+  document.getElementById('weather')
+);
+----
+
+
+
+
+=== Refactoring
+
+I don’t like to put data logic in the view component. Let’s refactor the code to move the data update away from the view component.
+
+The update data module is now in charged of the data processing after fetching the JSON.
+
+.WeatherData module
+[source, js]
+----
+// Data only module
+class WeatherData {
+  constructor(cityName="Hong Kong") {
+    this.cityName = cityName;
+    this.description = 'good'; // default value;
+    
+    
+    this.apiKey = "9da4ab7247b9bfa529c947d04e087fc3";
+    this.apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=";    
+    
+    this.fetch();
+  }
+  jsonURL() {
+    return `${this.apiUrl}${this.cityName}&APPID=${this.apiKey}`;
+  }
+  // callback(weatherData)
+  // weatherData: {cityName, weatherDescription}
+  fetch(callback) {
+    fetch(this.jsonURL())
+      .then( (response) => {      
+        return response.json();
+      })
+      .then( (data) => {
+        this.description = data.weather[0].description;
+        callback && callback({
+          cityName: this.cityName,
+          weatherDescription: this.description
+        })
+      });
+  }
+}
+----
+
+The React View class now only communicate with the WeatherData module. It doesn’t process the JSON fetching.
+
+.React view module
+[source, js]
+----
+// React View module
+var WeatherNode = React.createClass({
+  getInitialState() {
+    return {
+      city: 'Somewhere',
+      weatherDescription: 'a good day'
+    }
+  },
+  componentDidMount() { 
+    var weather = this.props.source;
+    console.log('BBBB');
+    
+    weather.fetch( (data) => {
+     if (this.isMounted()) {
+        console.log("Update state");
+        this.setState({
+          city: data.cityName,
+          weatherDescription: data.weatherDescription
+        })
+      }           
+    });
+    
+    this.setState({
+      city: weather.cityName,
+      weatherDescription: weather.description
+    })
+  },
+  render() {
+    return (
+      <p>
+        Hello <em>{this.state.city}</em>. It is <strong>{this.state.weatherDescription}</strong> today.
+      </p>
+    );
+  }
+});
+----
+
+Finally, here is how we use our data module and React view.
+
+.Using our data module and React view.
+[source, js]
+----
+// data instance
+var weatherHongKong = new WeatherData("Hong Kong");
+
+// view rendering
+React.render(
+  <WeatherNode source={weatherHongKong} />,
+  document.getElementById('weather')
+);
+----
+
+You can find the working example in the following URL:
+
+http://codepen.io/makzan/pen/JYedqb

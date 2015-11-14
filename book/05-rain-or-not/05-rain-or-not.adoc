@@ -4,7 +4,7 @@
 
 This is an example of using jQuery, jQuery mobile and GPS data.
 
-== Example—Rain or Not?
+== Example―Rain or Not?
 
 
 In jQuery, we use `$.getJSON` to fetch JSON data from web service’s API.

@@ -7,3 +7,11 @@ ReactJS is the view-only library, developed by Facebook.
 include::react-pre-render.adoc[]
 
 include::react-native.adoc[]
+
+include::example-current-weather.adoc[]
+
+include::example-forcast.adoc[]
+
+include::example-weather-current-forcast.adoc[]
+
+include::example-weather-with-city-input.adoc[]

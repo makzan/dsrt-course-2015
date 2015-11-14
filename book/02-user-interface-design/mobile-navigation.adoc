@@ -31,7 +31,7 @@ image::images/tabs-more.jpg[]
 image::images/edit-tabs.jpg[]
 
 
-== Case study navigation—Facebook
+== Case study navigation―Facebook
 
 1. First they invented the 9-grid navigation.
 +

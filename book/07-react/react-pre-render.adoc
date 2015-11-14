@@ -3,3 +3,7 @@
 Why we need to pre render the React component?
 
 That's fallback for browsers that don't have JavaScript support.
+
+The exact technique depends on what server-side technology you use. For example, in Rails, ReactJS team made a gem named `rails-react` which render the React component in Rails way. It provides a feature to compile the React component in server by using the node.js runtime.
+
+https://github.com/reactjs/react-rails

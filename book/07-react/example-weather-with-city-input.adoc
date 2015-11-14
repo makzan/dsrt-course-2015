@@ -1,0 +1,162 @@
+== Example: Weather information with Cities
+
+In last example, we simply put the 2 React components’ JavaScript code together. In this example, we need to refractor the code so that the input changes can propagate the data to each components in better way.
+
+You can find the working example in the following CodePen:
+
+http://codepen.io/makzan/pen/meQVXJ
+
+=== Data Module
+
+This is view-only change. There is nothing changes to our Data module.
+
+=== React Component View
+
+We want to simplify the React components. Most of the children should only care about how to display the data. The handling of data fetching and changes is moved the parent/root node.
+
+We redefine the `WeatherNode` and `ForecastList`.
+
+.WeatherNode and ForecastList
+[source,js]
+----
+var WeatherNode = React.createClass({
+  render() {
+    return (
+      <p>
+        Hello <em>{this.props.city}</em>. It is <strong>{this.props.weather}</strong> today.
+      </p>
+    );
+  }
+});
+
+var ForecastList = React.createClass({  
+  render() {
+    return (
+      <div>
+        <p>7 days forecast:</p>
+        <ul>
+          {this.props.forecastList.map( (item, i) => { return (
+            <li key={i}>{Math.round(item.tempature)}C, {item.date.toDateString()}, {item.description}</li> 
+          ) })}
+        </ul>
+      </div>
+    );
+  }
+});
+----
+
+The new `CityInput` component:
+
+----
+var CityInput = React.createClass({
+  getInitialState() {
+    return {value: 'Hong Kong'};
+  },
+  handleChange(event) {
+    this.setState({
+      value: event.target.value
+    })
+    this.props.onChange(event.target.value);    
+  },
+  render() {
+    return (
+        <input type='text' placeholder='City name...' value={this.state.value} onChange={this.handleChange} />
+    )
+  }
+});
+----
+
+
+To make thing more interesting, I include some sample cities in the input component.
+
+----
+var CityInput = React.createClass({
+  getInitialState() {
+    return {value: 'Hong Kong'};
+  },
+  getDefaultProps() {
+    return {
+      sampleCities: ["London", "New York", "Beijing", "Sau Paulo", "Sydney", "Helsinki"]
+    }
+  },
+  handleChange(event) {
+    this.setState({
+      value: event.target.value
+    })
+    this.props.onChange(event.target.value);    
+  },
+  handleClick(event) {
+    console.log(event.target.text);
+    this.setState({
+      value: event.target.text
+    })
+    this.props.onChange(event.target.text);
+  },
+  render() {
+    return (
+      <div>
+        <input type='text' placeholder='City name...' value={this.state.value} onChange={this.handleChange} />
+        <p>Sample:
+        {this.props.sampleCities.map( (city, i) => {
+          return <a key={i} className="sample-city" onClick={this.handleClick}>{city}</a>;
+        })}         
+        </p>
+      </div>
+    )
+  }
+});
+----
+
+
+The input assumes a callback property named `onChange` is passed in from the parent. The parent is the `WeatherComponent` which is now in charge of managing the data refreshing when user interacts with it.
+
+----
+var WeatherComponent = React.createClass({
+  getInitialState() {
+    return {
+      city: "Somewhere",
+      weatherDescription: "",
+      forecastList: []
+    }
+  },
+  refreshData(){
+    var weather = this.props.source;  
+    weather.fetchCurrent( (data) => {
+      this.setState({
+        city: data.cityName,
+        weatherDescription: data.weatherDescription
+      });          
+    });
+    
+    weather.fetchForecast( (data) => {
+      this.setState({
+        city: data.cityName,
+        forecastList: data.forecastList
+      });        
+    });
+  },
+  handleChange(newCityName) {
+    var weather = this.props.source;  
+    weather.cityName = newCityName; 
+    
+    this.refreshData();
+  },
+  componentDidMount() { 
+    this.refreshData();
+  },
+  render() {
+    return (
+      <div>
+        <CityInput onChange={this.handleChange} />
+        <WeatherNode city={this.state.city} weather={this.state.weatherDescription} />
+        <ForecastList forecastList={this.state.forecastList} />
+      </div>
+    );
+  }
+});
+----
+
+
+You can find the working example in the following CodePen:
+
+http://codepen.io/makzan/pen/meQVXJ

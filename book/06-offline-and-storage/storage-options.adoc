@@ -52,4 +52,5 @@ There was WebSQL option too but it is deprecated and browser is dropping support
 
 === Remote Storage Options
 
-Parse.com
+- Parse.com
+- Firebase.com

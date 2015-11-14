@@ -1,4 +1,4 @@
-== Case study—Facebook app
+== Case study―Facebook app
 
 At the beginning, Facebook app uses a 9-grid navigation which was a native Objective-C app.
 

@@ -1,0 +1,107 @@
+== Example: Getting Weather Forecast
+
+In this example, we fork the current weather example and make it displaying a list of forecast weather.
+
+You can find the working example in the following CodePen:
+
+http://codepen.io/makzan/pen/meQeWG
+
+----
+// Data only module
+class WeatherData {
+  constructor(cityName="Hong Kong") {
+    this.cityName = cityName;
+    this.list = [];
+    
+    this.apiKey = "9da4ab7247b9bfa529c947d04e087fc3";
+    this.apiUrl = "http://api.openweathermap.org/data/2.5/forecast/daily?units=metric&q=";    
+    
+    this.fetch();
+  }
+  jsonURL() {
+    return `${this.apiUrl}${this.cityName}&APPID=${this.apiKey}`;
+  }
+  // callback(weatherData)
+  // weatherData: {cityName, forecastList}
+  fetch(callback) {    
+    fetch(this.jsonURL())
+      .then( (response) => {      
+        return response.json();
+      })
+      .then( (data) => {
+        this.list.length = 0;
+        for (var forecast of data.list) {
+          this.list.push({
+            date: new Date(forecast.dt * 1000),
+            description: forecast.weather[0].description,
+            tempature: forecast.temp.day
+          });
+        }
+        callback && callback({
+          cityName: this.cityName,
+          forecastList: this.list
+        })
+      });
+  }
+}
+----
+
+React View
+
+----
+// React View module
+var ForecastList = React.createClass({
+  getInitialState() {
+    return {
+      city: 'Somewhere',
+      forecastList: []
+    }
+  },
+  componentDidMount() { 
+    var weather = this.props.source;
+    
+    weather.fetch( (data) => {
+     if (this.isMounted()) {
+        this.setState({
+          city: data.cityName,
+          forecastList: data.forecastList
+        })
+      }           
+    });
+  },
+  render() {
+    return (
+      <div>
+        Hello <em>{this.state.city}</em>. Here is the weather forecast.
+        <ul>
+          {this.state.forecastList.map( (item) => { return (
+            <li>{Math.round(item.tempature)}C, {item.date.toDateString()}, {item.description}</li> 
+          ) })}
+        </ul>
+      </div>
+    );
+  }
+});
+----
+
+Finally, we create the weather instance and use it to render the React component.
+
+----
+// data instance
+var weatherHongKong = new WeatherData("Hong Kong");
+
+// view rendering
+React.render(
+  <ForecastList source={weatherHongKong} />,
+  document.getElementById('weather')
+);
+----
+
+Here is the result.
+
+
+
+
+You can find the working example in the following CodePen:
+
+http://codepen.io/makzan/pen/meQeWG

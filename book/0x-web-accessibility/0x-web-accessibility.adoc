@@ -7,7 +7,7 @@ We build the web for every one. That's why accessibility is an important topic.
 == Web Accessibility
 
 
-== Accessibility—Making the web inclusive
+== Accessibility―Making the web inclusive
 
 One difference between web and app is that web pages should be designed to be inclusive. It doesn't and never lock into particular platform. It's designed so that every one can get the information. This is why we need to handle accessibility in our web pages.
 
@@ -32,3 +32,7 @@ TODO: Example for tab and tab content with asia-role
 == Color blind
 
 TODO: link to color blind checking tool.
+
+
+
+== For Disabilities, and for older ones
