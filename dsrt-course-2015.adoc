@@ -24,6 +24,6 @@ include::book/06-offline-and-storage/06-offline-and-storage.adoc[leveloffset=+1]
 
 include::book/07-react/07-react.adoc[leveloffset=+1]
 
-include::book/0x-desktop-web-app/0x-desktop-web-app.adoc[leveloffset=+1]
+include::book/08-desktop-web-app/08-desktop-web-app.adoc[leveloffset=+1]
 
-include::book/0x-web-accessibility/0x-web-accessibility.adoc[leveloffset=+1]
+include::book/09-web-accessibility/09-web-accessibility.adoc[leveloffset=+1]

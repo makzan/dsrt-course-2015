@@ -6,11 +6,280 @@ For example, we can use <ListView> to represent a list of collection. In iOS, th
 
 Here is the sample code of a ListView.
 
+.Sample list view in React-Native
+----
+'use strict';
+
+var React = require('react-native');
+var {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  ScrollView,
+  ListView,
+  PixelRatio,
+  TouchableHighlight,
+} = React;
+
+var CarDetail = require('./CarDetail');
+
+var cars=[];
+
+var dataSource = new ListView.DataSource({
+  rowHasChanged:function(r1, r2){return r1.id !== r2.id}
+});
+
+
+var CarForm = React.createClass({
+    onSavePress:function(){
+      console.log(this.state);
+      var car={};
+      car.model=this.state.model;
+      car.license=this.state.license;
+      car.km=this.state.km
+      this.props.carStore.addCar(car);
+      this.props.navigator.pop();
+    },
+    onModelChange:function(text){
+      this.setState({model:text});
+    },
+    onLicenseChange:function(text){
+      this.setState({license:text});
+    },
+    onKmChange:function(text){
+      this.setState({km:text});
+    },
+    getInitialState:()=>{
+      return {model:"", license:"", km:""}
+    },
+    render: function(){
+      return (
+        <ScrollView>
+          <Text style={styles.formLabel}>
+            Model:
+          </Text>
+          <View style={styles.fullSeparator} />
+          <TextInput style={styles.carModeInput} 
+            onChangeText={(text)=>{this.onModelChange(text)}} >
+          </TextInput>
+          <View style={styles.fullSeparator} />
+          <Text style={styles.formLabel}>
+            License:
+          </Text>
+          <View style={styles.fullSeparator} />
+          <TextInput style={styles.carModeInput}
+            onChangeText={this.onLicenseChange} >
+          </TextInput>
+          <View style={styles.fullSeparator} />
+          <Text style={styles.formLabel}>
+            Milage: 
+          </Text>
+          <View style={styles.fullSeparator} />
+          <TextInput style={styles.carModeInput} keyboardType={'number-pad'}
+            onChangeText={this.onKmChange} >
+          </TextInput>
+          <View style={styles.fullSeparator} />
+
+          <TouchableHighlight style={styles.formSave} onPress={this.onSavePress}>
+            <Text>
+              Save
+            </Text>
+          </TouchableHighlight>
+        </ScrollView>
+
+      );
+    },
+});
+
+var CarList = React.createClass({
+  onSeedPress:function(){
+    this.props.carStore.seed();
+  },
+  onAddPress:function(){
+    //console.log(this.props);
+    this.props.navigator.push(
+      {
+        title: 'Car Form',
+        component: CarForm,
+        leftButtonTitle: 'Back',
+        onLeftButtonPress: ()=>{this.props.navigator.pop();},
+        passProps: {},
+      }
+    );
+  },
+
+  deleteRow:function(id){
+    console.log('delete row.id',id);
+
+    // the dataBlob feed to a DataSource has to be immutable
+    // do not mutate the cars in place...
+    // that will screw up DataSource dirty check
+    var j=0;
+    var ary=[];
+    for(var i=0, l=cars.length; i<l; i++){
+      if(cars[i].id !== id){
+        console.log("j",j);
+        console.log("i",i);
+        ary[j++] = cars[i];
+      }
+    }
+    cars = ary;
+    this.setState({cars:this.getDataSource(ary)});
+  }, 
+  getDataSource: function(cars: Array<any>): ListView.DataSource {
+    return this.state.cars.cloneWithRows(cars);
+  },
+  onRowPress: function(){
+    this.props.navigator.push(
+      {
+        title: 'Car Details',
+        component: CarDetail,
+        backButtonTitle: 'Back',
+        passProps: {carStore:this.props.carStore},
+      }
+    );
+  },
+  renderCarRow:function(car, i:number ){
+    return (
+      <View key={i} >
+        <TouchableHighlight onPress={this.onRowPress} >
+          <View style={styles.carRow}>
+            <View style={styles.info}>
+              <Text style={styles.model}>{car.model}</Text>
+              <Text style={styles.detail}>License: {car.license}    km: {car.km}</Text>
+            </View>
+          </View>
+        </TouchableHighlight>
+        <View style={styles.separator} />
+      </View>
+    );
+  },
+  getInitialState: function() {
+    return {
+      dataSource:dataSource.cloneWithRows(this.props.carStore.cars),
+    }
+  },
+  render: function() {
+    var props = {};
+
+    props.deleteCar = function(id){
+      console.log('delete car id:'+id);
+    }
+
+    return (
+      <View style={styles.container}>
+      <ListView dataSource={this.state.dataSource} renderRow={this.renderCarRow} style={styles.list}  />
+
+        <View style={styles.toolbar}>
+          <TouchableHighlight onPress={this.onAddPress} style={styles.toolbarBtn}>
+            <Text style={styles.toolbarBtnText}>Add</Text>
+          </TouchableHighlight>
+
+          <TouchableHighlight onPress={this.onSeedPress} style={styles.toolbarBtn}>
+            <Text style={styles.toolbarBtnText}>Seed</Text>
+          </TouchableHighlight>
+      
+        </View>
+      </View>
+    );
+  }
+});
+
+
+module.exports = CarList;
+----
+
 Then we provide the ListView a data source.
 
 For each cell, we define how the cell layout by using the Flexbox component.
 
 We also defines what happens when each cell is tapped. For example, we tells the navigation controller to push to the next view with content of the selected cell.
+
+For styles, we can define the styles via CSS-like syntax.
+
+.CSS-like syntax for React-Native.
+----
+var styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+  //  alignItems: 'center',
+    //backgroundColor: '#EEE',
+  },
+  list:{
+    alignSelf: 'stretch',
+    //backgroundColor: '#DDD',
+  },
+  carRow:{
+    //backgroundColor: '#CCC',
+    backgroundColor:"white",
+    padding: 10,
+    height: 100,
+    flexDirection:'row',
+  },
+  model:{
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginTop: 10,
+  },
+  info:{
+    flex:1,
+    alignSelf: 'stretch',
+  },
+  separator:{
+    height: 1 / PixelRatio.get(),
+    backgroundColor: '#bbbbbb',
+    marginLeft: 10,
+    marginRight: 10,
+  },
+  fullSeparator:{
+    height: 1 / PixelRatio.get(),
+    backgroundColor: '#bbbbbb',
+  },
+  close:{
+    alignSelf:'center',
+    fontSize: 30,
+    fontWeight:'bold',
+    color: '#ff0000',
+    textAlign: 'center',
+    width:30,
+  },
+  closeTouch:{
+    flexDirection:'column',
+    alignSelf:'center',
+  },
+  toolbar:{
+    borderTopWidth: 1,
+    borderTopColor:'#333',
+    height: 40,
+    alignSelf:'stretch',
+    flexDirection:'row',
+    justifyContent:'center',
+    alignItems: 'center',
+  },
+  toolbarBtn:{
+    marginLeft: 10,
+    marginRight: 10,
+  },
+  toolbarBtnText:{
+    color: '#321122',
+  },
+  formLabel:{
+    height: 40,
+    paddingTop: 10,
+    paddingLeft: 10,
+  },
+  carModeInput:{
+    paddingLeft: 10,
+    backgroundColor: 'white',
+    height: 40,
+  },
+  formSave:{
+  },
+});
+----
 
 === Observation
 
