@@ -9,3 +9,6 @@ The large amount of Node.js packages and the system level API allows many possib
 
 
 http://photonkit.com[Photon] provides user interface components to Electron based app.
+
+
+NOTE: Similar PhotokKit provides UI styles for desktop web app. http://www.idangero.us/framework7/[Framework7] provides UI styles for iOS and Android to make web app looks native.
