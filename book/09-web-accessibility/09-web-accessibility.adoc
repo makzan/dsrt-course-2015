@@ -4,35 +4,100 @@
 
 We build the web for every one. That's why accessibility is an important topic.
 
-== Web Accessibility
-
-
-== Accessibility―Making the web inclusive
+== Making the web inclusive
 
 One difference between web and app is that web pages should be designed to be inclusive. It doesn't and never lock into particular platform. It's designed so that every one can get the information. This is why we need to handle accessibility in our web pages.
 
-== ARIA roles
 
-=== Common ARIA Roles
-
-- For structure
-- For buttons
-- For UI Components
-
-=== UI Components
-
-- Button
-- Dialog
-- Tab and Tabs Content
-
-TODO: Button with title for voice speaking out.
-
-TODO: Example for tab and tab content with asia-role
-
-== Color blind
-
-TODO: link to color blind checking tool.
+== Font Size and Basic
 
 
+- Use percentage unit instead of fixed unit
+- Use `alt` and write real meaning. An empty `alt` usually means decorative image that's is not part of the content.
+- Use `title` in <img> tag for mouse hover tooltip
+- Enable Viewport scaling
 
-== For Disabilities, and for older ones
+== Form Accessibility
+
+In input, use <label> `for`.
+http://webaim.org/techniques/forms/
+
+== Contrast
+
+Your background and front color should have a clear contrast.
+
+Check your contrast raito with this tool from Lea Verou.
+
+http://leaverou.github.io/contrast-ratio/
+
+TIPS: You can focus the cursor on a numeric value and presss `up` and `down` key to adjust the value. This allows you to fine tune the value easily.
+
+http://webaim.org/articles/visual/colorblind
+
+== Semantics
+
+http://webaim.org/techniques/semanticstructure/
+
+== ARIA Landmark and Roles
+
+ARIA Landmark
+
+http://webaim.org/techniques/aria/#landmarks
+
+Tab roles example:
+
+http://codepen.io/makzan/pen/PqyxyR
+
+----
+<div class='tabs' role="tablist"> <!-- Tab navigation -->
+  <a href='#tabcontent1' id='tab1' aria-controls="tabcontent1" role="tab">Restaurant Review</a>
+  <a href='#tabcontent2' id='tab2' aria-controls="tabcontent2" role="tab">Job Applying</a>
+  <a href='#tabcontent3' id='tab3' aria-controls="tabcontent3" role="tab">Others</a>
+</div>
+----
+
+<div id='tabcontent1' class='tab-content' aria-labelledby='tab1' role="tabpanel">
+</div>
+
+----
+<div id='rental-dialog' role="dialog" aria-labelledby="dialog-heading" aria-describedby="dialog-description"> <!-- Rental dialog. -->
+    <h2 id='dialog-heading'>Renting Restaurant</h2>
+    <p id='dialog-description'>It only take few steps to enjoy the food.</p>
+    <div class="container">
+      <div class="ui">
+        <a href='#close-rental-dialog' aria-label="Close the dialog">Close</a>
+      </div>
+    </div>
+</div>
+----
+
+
+== Testing Accessibility
+
+Developer tool in browser provides information.
+
+The developer tool provide information on how browser think what role each element is.
+
+image::http://write-md-v2.s3.amazonaws.com.s3-ap-southeast-1.amazonaws.com/attachments/6/original/Screen_Shot_2015-11-24_at_6.45.26_PM.png?1448362207[Accessibility inspection in browser developer tool.]
+
+
+== Voice Over
+
+Try to use the voice over function in your computer and use it to control your web page.
+
+Try to close your eye and see if you can operate your web pages.
+
+
+
+== Apply tab index
+
+http://webaim.org/techniques/keyboard/tabindex
+
+
+=== Further Readings
+
+- Web accessibility in mind (http://webaim.org/articles/)
+- Checklist (http://www.w3.org/TR/WCAG10/full-checklist.html)
+
+
+
